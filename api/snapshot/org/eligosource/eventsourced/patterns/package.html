@@ -44,36 +44,13 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
-          <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><a href="ReliableRequestReply.html" class="extype" name="org.eligosource.eventsourced.patterns.ReliableRequestReply">ReliableRequestReply</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div></div>
+          <div id="comment" class="fullcommenttop"></div>
         
 
       <div id="mbrsel">
         <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
-        <div id="order">
-              <span class="filtertype">Ordering</span>
-              <ol>
-                
-                <li class="alpha in"><span>Alphabetic</span></li>
-                <li class="inherit out"><span>By inheritance</span></li>
-              </ol>
-            </div>
-        <div id="ancestors">
-                <span class="filtertype">Inherited<br />
-                </span>
-                <ol id="linearization">
-                  <li class="in" name="org.eligosource.eventsourced.patterns"><span>patterns</span></li><li class="in" name="org.eligosource.eventsourced.patterns.ReliableRequestReply"><span>ReliableRequestReply</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
-                </ol>
-              </div><div id="ancestors">
-            <span class="filtertype"></span>
-            <ol>
-              <li class="hideall out"><span>Hide All</span></li>
-              <li class="showall in"><span>Show all</span></li>
-            </ol>
-            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
-          </div>
+        
+        
         <div id="visbl">
             <span class="filtertype">Visibility</span>
             <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
@@ -126,21 +103,6 @@ channel responds with <code>akka.actor.Status.Failure</code>.</p>
       </span>
       </h4>
       <p class="comment cmt">Reliable request-reply channel support.</p>
-    </li><li name="org.eligosource.eventsourced.patterns.ReliableRequestReply.ReliableRequestReplyChannelProps" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ReliableRequestReplyChannelPropsextendsChannelPropswithProductwithSerializable"></a>
-      <a id="ReliableRequestReplyChannelProps:ReliableRequestReplyChannelProps"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">case class</span>
-      </span>
-      <span class="symbol">
-        <a href="ReliableRequestReply$ReliableRequestReplyChannelProps.html"><span class="name">ReliableRequestReplyChannelProps</span></a><span class="params">(<span name="id">id: <span class="extype" name="scala.Int">Int</span></span>, <span name="destination">destination: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="replyTimeout">replyTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(5).seconds">...</span></span>, <span name="policy">policy: <a href="../core/RedeliveryPolicy.html" class="extype" name="org.eligosource.eventsourced.core.RedeliveryPolicy">RedeliveryPolicy</a> = <span class="defval" name="{<br/>&amp;nbsp;&amp;nbsp;  val qual$1: org.eligosource.eventsourced.core.RedeliveryPolicy = org.eligosource.eventsourced.core.RedeliveryPolicy.apply();<br/>&amp;nbsp;&amp;nbsp;  val x$2: scala.concurrent.duration.FiniteDuration = scala.concurrent.duration.`package`.DurationInt(10).seconds;<br/>&amp;nbsp;&amp;nbsp;  val x$3: scala.concurrent.duration.FiniteDuration = qual$1.copy$default$2;<br/>&amp;nbsp;&amp;nbsp;  val x$4: Int = qual$1.copy$default$3;<br/>&amp;nbsp;&amp;nbsp;  val x$5: scala.concurrent.duration.FiniteDuration = qual$1.copy$default$4;<br/>&amp;nbsp;&amp;nbsp;  val x$6: Int = qual$1.copy$default$5;<br/>&amp;nbsp;&amp;nbsp;  qual$1.copy(x$2, x$3, x$4, x$5, x$6)<br/>&amp;nbsp;&amp;nbsp;}">...</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="../core/ChannelProps.html" class="extype" name="org.eligosource.eventsourced.core.ChannelProps">ChannelProps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
-      </span>
-      </h4>
-      <p class="comment cmt">Reliable request-reply channel configuration object used to configure a
-<a href="../core/ReliableChannel.html" class="extype" name="org.eligosource.eventsourced.core.ReliableChannel">org.eligosource.eventsourced.core.ReliableChannel</a> and a proxy for
-<code>destination</code>.</p>
     </li></ol>
             </div>
 
@@ -154,13 +116,7 @@ channel responds with <code>akka.actor.Status.Failure</code>.</p>
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="org.eligosource.eventsourced.patterns.ReliableRequestReply">
-              <h3>Inherited from <a href="ReliableRequestReply.html" class="extype" name="org.eligosource.eventsourced.patterns.ReliableRequestReply">ReliableRequestReply</a></h3>
-            </div><div class="parent" name="scala.AnyRef">
-              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
-            </div><div class="parent" name="scala.Any">
-              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
-            </div>
+        
         
         </div>
 
