@@ -87,7 +87,7 @@
         <div id="types" class="types members">
               <h3>Type Members</h3>
               <ol><li name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="ConcurrentWriteJournalextendsObject"></a>
+      <a id="ConcurrentWriteJournalextendsActor"></a>
       <a id="ConcurrentWriteJournal:ConcurrentWriteJournal"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -95,10 +95,10 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="ConcurrentWriteJournal.html"><span class="name">ConcurrentWriteJournal</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <a href="ConcurrentWriteJournal.html"><span class="name">ConcurrentWriteJournal</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span></span>
       </span>
       </h4>
-      <p class="comment cmt">Support trait for journal implementations with optionally concurrent, non-blocking writes.</p>
+      <p class="comment cmt">Support trait for journal implementations with optionally concurrent, async writes.</p>
     </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="SequentialWriteJournalextendsActor"></a>
       <a id="SequentialWriteJournal:SequentialWriteJournal"></a>
@@ -119,7 +119,20 @@
 
         <div id="values" class="values members">
               <h3>Value Members</h3>
-              <ol><li name="org.eligosource.eventsourced.journal.common.package#counterFromBytes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+              <ol><li name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ConcurrentWriteJournal"></a>
+      <a id="ConcurrentWriteJournal:ConcurrentWriteJournal"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="ConcurrentWriteJournal$.html"><span class="name">ConcurrentWriteJournal</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.common.package#counterFromBytes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="counterFromBytes(bytes:Array[Byte]):Long"></a>
       <a id="counterFromBytes(Array[Byte]):Long"></a>
       <h4 class="signature">

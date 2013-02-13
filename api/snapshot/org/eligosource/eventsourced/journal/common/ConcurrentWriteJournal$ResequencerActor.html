@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>SequentialWriteJournal - org.eligosource.eventsourced.journal.common.SequentialWriteJournal</title>
-          <meta name="description" content="SequentialWriteJournal - org.eligosource.eventsourced.journal.common.SequentialWriteJournal" />
-          <meta name="keywords" content="SequentialWriteJournal org.eligosource.eventsourced.journal.common.SequentialWriteJournal" />
+          <title>ResequencerActor - org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.ResequencerActor</title>
+          <meta name="description" content="ResequencerActor - org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.ResequencerActor" />
+          <meta name="keywords" content="ResequencerActor org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.ResequencerActor" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -17,7 +17,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../../index.html';
-            var hash = 'org.eligosource.eventsourced.journal.common.SequentialWriteJournal';
+            var hash = 'org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal$ResequencerActor';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -29,23 +29,22 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../../../lib/trait_big.png" />
-        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.journal">journal</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.journal.common">common</a></p>
-        <h1>SequentialWriteJournal</h1>
+        <img src="../../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.journal">journal</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.journal.common">common</a>.<a href="ConcurrentWriteJournal.html" class="extype" name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal">ConcurrentWriteJournal</a></p>
+        <h1>ResequencerActor</h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">trait</span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">SequentialWriteJournal</span><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span></span>
+        <span class="name">ResequencerActor</span><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Support trait for journal implementations with sequential, blocking writes.
-</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="akka.actor.Actor">Actor</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -65,7 +64,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal"><span>SequentialWriteJournal</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.ResequencerActor"><span>ResequencerActor</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -83,7 +82,23 @@
 
       <div id="template">
         <div id="allMembers">
-        
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.ResequencerActor#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(replayer:ConcurrentWriteJournal.this.Replayer):ConcurrentWriteJournal.this.ResequencerActor"></a>
+      <a id="&lt;init&gt;:ResequencerActor"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ResequencerActor</span><span class="params">(<span name="replayer">replayer: <a href="ConcurrentWriteJournal$Replayer.html" class="extype" name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.Replayer">Replayer</a></span>)</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
@@ -103,153 +118,10 @@
     </li></ol>
             </div>
 
-        <div id="values" class="values members">
-              <h3>Abstract Value Members</h3>
-              <ol><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#executeBatchReplayInMsgs" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="executeBatchReplayInMsgs(cmds:Seq[org.eligosource.eventsourced.core.Journal.ReplayInMsgs],p:(org.eligosource.eventsourced.core.Message,akka.actor.ActorRef)=&gt;Unit):Unit"></a>
-      <a id="executeBatchReplayInMsgs(Seq[ReplayInMsgs],(Message,ActorRef)⇒Unit):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">executeBatchReplayInMsgs</span><span class="params">(<span name="cmds">cmds: <span class="extype" name="scala.Seq">Seq</span>[<a href="../../core/Journal$$ReplayInMsgs.html" class="extype" name="org.eligosource.eventsourced.core.Journal.ReplayInMsgs">ReplayInMsgs</a>]</span>, <span name="p">p: (<a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">Message</a>, <span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Instructs a journal provider to batch-replay input messages.</p><div class="fullcomment"><div class="comment cmt"><p>Instructs a journal provider to batch-replay input messages. The provider must
-reply to the sender with <a href="../../core/Journal$$ReplayDone$.html" class="extype" name="org.eligosource.eventsourced.core.Journal.ReplayDone">org.eligosource.eventsourced.core.Journal.ReplayDone</a>
-when all replayed messages have been added to the corresponding replay targets'
-mailboxes.
-</p></div><dl class="paramcmts block"><dt class="param">cmds</dt><dd class="cmt"><p>command batch to be executed by the journal provider.</p></dd><dt class="param">p</dt><dd class="cmt"><p>function to be called by the provider for every replayed input message.
-       The <code>acks</code> field of a replayed input message must contain the channel ids
-       of all acknowledgements for that input message. The replay <code>target</code> of the
-       currently processed <a href="../../core/Journal$$ReplayInMsgs.html" class="extype" name="org.eligosource.eventsourced.core.Journal.ReplayInMsgs">org.eligosource.eventsourced.core.Journal.ReplayInMsgs</a>
-       command must be passed as second argument.
-</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="../../core/EventsourcingExtension.html" class="extype" name="org.eligosource.eventsourced.core.EventsourcingExtension">org.eligosource.eventsourced.core.EventsourcingExtension</a>
-</p></span><span class="cmt"><p><a href="../../core/Journal$$WriteAck.html" class="extype" name="org.eligosource.eventsourced.core.Journal.WriteAck">org.eligosource.eventsourced.core.Journal.WriteAck</a></p></span></dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#executeDeleteOutMsg" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="executeDeleteOutMsg(cmd:org.eligosource.eventsourced.core.Journal.DeleteOutMsg):Unit"></a>
-      <a id="executeDeleteOutMsg(DeleteOutMsg):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">executeDeleteOutMsg</span><span class="params">(<span name="cmd">cmd: <a href="../../core/Journal$$DeleteOutMsg.html" class="extype" name="org.eligosource.eventsourced.core.Journal.DeleteOutMsg">DeleteOutMsg</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Instructs a journal provider to delete an output message.</p><div class="fullcomment"><div class="comment cmt"><p>Instructs a journal provider to delete an output message.
-</p></div><dl class="paramcmts block"><dt class="param">cmd</dt><dd class="cmt"><p>command to be executed by the journal provider.
-</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="../../core/ReliableChannel.html" class="extype" name="org.eligosource.eventsourced.core.ReliableChannel">org.eligosource.eventsourced.core.ReliableChannel</a>
-</p></span><span class="cmt"><p><a href="../../core/Journal$$DeleteOutMsg.html" class="extype" name="org.eligosource.eventsourced.core.Journal.DeleteOutMsg">org.eligosource.eventsourced.core.Journal.DeleteOutMsg</a></p></span></dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#executeReplayInMsgs" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="executeReplayInMsgs(cmd:org.eligosource.eventsourced.core.Journal.ReplayInMsgs,p:org.eligosource.eventsourced.core.Message=&gt;Unit):Unit"></a>
-      <a id="executeReplayInMsgs(ReplayInMsgs,(Message)⇒Unit):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">executeReplayInMsgs</span><span class="params">(<span name="cmd">cmd: <a href="../../core/Journal$$ReplayInMsgs.html" class="extype" name="org.eligosource.eventsourced.core.Journal.ReplayInMsgs">ReplayInMsgs</a></span>, <span name="p">p: (<a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">Message</a>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Instructs a journal provider to replay input messages.</p><div class="fullcomment"><div class="comment cmt"><p>Instructs a journal provider to replay input messages. The provider must
-reply to the sender with <a href="../../core/Journal$$ReplayDone$.html" class="extype" name="org.eligosource.eventsourced.core.Journal.ReplayDone">org.eligosource.eventsourced.core.Journal.ReplayDone</a>
-when all replayed messages have been added to the corresponding replay target's
-mailbox.
-</p></div><dl class="paramcmts block"><dt class="param">cmd</dt><dd class="cmt"><p>command to be executed by the journal provider.</p></dd><dt class="param">p</dt><dd class="cmt"><p>function to be called by the provider for each replayed input message.
-       The <code>acks</code> field of a replayed input message must contain the channel ids
-       of all acknowledgements for that input message.
-</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="../../core/EventsourcingExtension.html" class="extype" name="org.eligosource.eventsourced.core.EventsourcingExtension">org.eligosource.eventsourced.core.EventsourcingExtension</a>
-</p></span><span class="cmt"><p><a href="../../core/Journal$$WriteAck.html" class="extype" name="org.eligosource.eventsourced.core.Journal.WriteAck">org.eligosource.eventsourced.core.Journal.WriteAck</a></p></span></dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#executeReplayOutMsgs" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="executeReplayOutMsgs(cmd:org.eligosource.eventsourced.core.Journal.ReplayOutMsgs,p:org.eligosource.eventsourced.core.Message=&gt;Unit):Unit"></a>
-      <a id="executeReplayOutMsgs(ReplayOutMsgs,(Message)⇒Unit):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">executeReplayOutMsgs</span><span class="params">(<span name="cmd">cmd: <a href="../../core/Journal$$ReplayOutMsgs.html" class="extype" name="org.eligosource.eventsourced.core.Journal.ReplayOutMsgs">ReplayOutMsgs</a></span>, <span name="p">p: (<a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">Message</a>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Instructs a journal provider to replay output messages.</p><div class="fullcomment"><div class="comment cmt"><p>Instructs a journal provider to replay output messages.
-</p></div><dl class="paramcmts block"><dt class="param">cmd</dt><dd class="cmt"><p>command to be executed by the journal provider.</p></dd><dt class="param">p</dt><dd class="cmt"><p>function to be called by the provider for each replayed output message.
-</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="../../core/EventsourcingExtension.html" class="extype" name="org.eligosource.eventsourced.core.EventsourcingExtension">org.eligosource.eventsourced.core.EventsourcingExtension</a>
-</p></span></dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#executeWriteAck" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="executeWriteAck(cmd:org.eligosource.eventsourced.core.Journal.WriteAck):Unit"></a>
-      <a id="executeWriteAck(WriteAck):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">executeWriteAck</span><span class="params">(<span name="cmd">cmd: <a href="../../core/Journal$$WriteAck.html" class="extype" name="org.eligosource.eventsourced.core.Journal.WriteAck">WriteAck</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Instructs a journal provider to write an acknowledgement.</p><div class="fullcomment"><div class="comment cmt"><p>Instructs a journal provider to write an acknowledgement.
-</p></div><dl class="paramcmts block"><dt class="param">cmd</dt><dd class="cmt"><p>command to be executed by the journal provider.
-</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="../../core/ReliableChannel.html" class="extype" name="org.eligosource.eventsourced.core.ReliableChannel">org.eligosource.eventsourced.core.ReliableChannel</a>
-</p></span><span class="cmt"><p><a href="../../core/DefaultChannel.html" class="extype" name="org.eligosource.eventsourced.core.DefaultChannel">org.eligosource.eventsourced.core.DefaultChannel</a></p></span><span class="cmt"><p><a href="../../core/Journal$$WriteAck.html" class="extype" name="org.eligosource.eventsourced.core.Journal.WriteAck">org.eligosource.eventsourced.core.Journal.WriteAck</a></p></span></dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#executeWriteInMsg" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="executeWriteInMsg(cmd:org.eligosource.eventsourced.core.Journal.WriteInMsg):Unit"></a>
-      <a id="executeWriteInMsg(WriteInMsg):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">executeWriteInMsg</span><span class="params">(<span name="cmd">cmd: <a href="../../core/Journal$$WriteInMsg.html" class="extype" name="org.eligosource.eventsourced.core.Journal.WriteInMsg">WriteInMsg</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Instructs a journal provider to write an input message.</p><div class="fullcomment"><div class="comment cmt"><p>Instructs a journal provider to write an input message.
-</p></div><dl class="paramcmts block"><dt class="param">cmd</dt><dd class="cmt"><p>command to be executed by the journal provider.
-</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="../../core/Journal$$WriteInMsg.html" class="extype" name="org.eligosource.eventsourced.core.Journal.WriteInMsg">org.eligosource.eventsourced.core.Journal.WriteInMsg</a>
-</p></span></dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#executeWriteOutMsg" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="executeWriteOutMsg(cmd:org.eligosource.eventsourced.core.Journal.WriteOutMsg):Unit"></a>
-      <a id="executeWriteOutMsg(WriteOutMsg):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">executeWriteOutMsg</span><span class="params">(<span name="cmd">cmd: <a href="../../core/Journal$$WriteOutMsg.html" class="extype" name="org.eligosource.eventsourced.core.Journal.WriteOutMsg">WriteOutMsg</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Instructs a journal provider to write an output message,
-optionally together with an acknowledgement.</p><div class="fullcomment"><div class="comment cmt"><p>Instructs a journal provider to write an output message,
-optionally together with an acknowledgement.
-</p></div><dl class="paramcmts block"><dt class="param">cmd</dt><dd class="cmt"><p>command to be executed by the journal provider.
-</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="../../core/Journal$$WriteInMsg.html" class="extype" name="org.eligosource.eventsourced.core.Journal.WriteInMsg">org.eligosource.eventsourced.core.Journal.WriteInMsg</a>
-</p></span></dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#storedCounter" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="storedCounter:Long"></a>
-      <a id="storedCounter:Long"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">storedCounter</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Returns the last stored counter value.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the last stored counter value.
-</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
-    </li></ol>
-            </div>
+        
 
         <div id="values" class="values members">
-              <h3>Concrete Value Members</h3>
+              <h3>Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:AnyRef):Boolean"></a>
       <a id="!=(AnyRef):Boolean"></a>
@@ -357,20 +229,6 @@ optionally together with an acknowledgement.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../akka/package.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#counter" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="counter:Long"></a>
-      <a id="counter:Long"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">counter</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Returns the current counter value.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the current counter value.
-</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -397,6 +255,19 @@ optionally together with an acknowledgement.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.ResequencerActor#execute" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="execute(cmd:Any,sdr:akka.actor.ActorRef):Unit"></a>
+      <a id="execute(Any,ActorRef):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">execute</span><span class="params">(<span name="cmd">cmd: <span class="extype" name="scala.Any">Any</span></span>, <span name="sdr">sdr: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -492,7 +363,7 @@ optionally together with an acknowledgement.
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
     </li><li name="akka.actor.Actor#postRestart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="postRestart(reason:&lt;?&gt;):Unit"></a>
+      <a id="postRestart(reason:Throwable):Unit"></a>
       <a id="postRestart(Throwable):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -504,7 +375,7 @@ optionally together with an acknowledgement.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#postStop" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="akka.actor.Actor#postStop" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="postStop():Unit"></a>
       <a id="postStop():Unit"></a>
       <h4 class="signature">
@@ -516,8 +387,7 @@ optionally together with an acknowledgement.
         <span class="name">postStop</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Calls <code>stop()</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Calls <code>stop()</code>.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal">SequentialWriteJournal</a> → Actor</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
     </li><li name="akka.actor.Actor#preRestart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="preRestart(reason:Throwable,message:Option[Any]):Unit"></a>
       <a id="preRestart(Throwable,Option[Any]):Unit"></a>
@@ -531,7 +401,7 @@ optionally together with an acknowledgement.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#preStart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="akka.actor.Actor#preStart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="preStart():Unit"></a>
       <a id="preStart():Unit"></a>
       <h4 class="signature">
@@ -543,9 +413,8 @@ optionally together with an acknowledgement.
         <span class="name">preStart</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Initializes the <code>counter</code> from the last stored counter value and calls <code>start()</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Initializes the <code>counter</code> from the last stored counter value and calls <code>start()</code>.
-</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal">SequentialWriteJournal</a> → Actor</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#receive" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.ResequencerActor#receive" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="receive:PartialFunction[Any,Unit]"></a>
       <a id="receive:PartialFunction[Any,Unit]"></a>
       <h4 class="signature">
@@ -557,7 +426,7 @@ optionally together with an acknowledgement.
         <span class="name">receive</span><span class="result">: <span class="extype" name="scala.PartialFunction">PartialFunction</span>[<span class="extype" name="scala.Any">Any</span>, <span class="extype" name="scala.Unit">Unit</span>]</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal">SequentialWriteJournal</a> → Actor</dd></dl></div>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.ResequencerActor">ResequencerActor</a> → Actor</dd></dl></div>
     </li><li name="akka.actor.Actor#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="self:akka.actor.ActorRef"></a>
       <a id="self:ActorRef"></a>
@@ -584,34 +453,6 @@ optionally together with an acknowledgement.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#start" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="start():Unit"></a>
-      <a id="start():Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">start</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Start callback.</p><div class="fullcomment"><div class="comment cmt"><p>Start callback. Empty default implementation.
-</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SequentialWriteJournal#stop" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="stop():Unit"></a>
-      <a id="stop():Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">stop</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Stop callback.</p><div class="fullcomment"><div class="comment cmt"><p>Stop callback. Empty default implementation.
-</p></div><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li name="akka.actor.Actor#supervisorStrategy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="supervisorStrategy:akka.actor.SupervisorStrategy"></a>
       <a id="supervisorStrategy:SupervisorStrategy"></a>
