@@ -2,22 +2,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>ReliableRequestReply - org.eligosource.eventsourced.patterns.ReliableRequestReply</title>
-          <meta name="description" content="ReliableRequestReply - org.eligosource.eventsourced.patterns.ReliableRequestReply" />
-          <meta name="keywords" content="ReliableRequestReply org.eligosource.eventsourced.patterns.ReliableRequestReply" />
+          <title>DestinationFailure - org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure</title>
+          <meta name="description" content="DestinationFailure - org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure" />
+          <meta name="keywords" content="DestinationFailure org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
-      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
-      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
-      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <link href="../../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/tools.tooltip.js"></script>
       
       <script type="text/javascript">
          if(top === self) {
-            var url = '../../../../index.html';
-            var hash = 'org.eligosource.eventsourced.patterns.ReliableRequestReply';
+            var url = '../../../../../../index.html';
+            var hash = 'org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -29,25 +29,34 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../../lib/trait_big.png" />
-        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.patterns">patterns</a></p>
-        <h1>ReliableRequestReply</h1>
+        <img src="../../../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../../../package.html" class="extype" name="org">org</a>.<a href="../../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced.patterns">patterns</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.patterns.reliable">reliable</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.patterns.reliable.requestreply">requestreply</a></p>
+        <h1>DestinationFailure</h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">trait</span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">ReliableRequestReply</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">DestinationFailure</span><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>, <span name="failureCount">failureCount: <span class="extype" name="scala.Int">Int</span></span>, <span name="request">request: <span class="extype" name="scala.Any">Any</span></span>, <span name="t">t: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Reliable request-reply channel support.
-</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Reply message to a request sender if the destination of a reliable request-reply
+channel responds with <code>akka.actor.Status.Failure</code>.
+</p></div><dl class="paramcmts block"><dt class="param">channelId</dt><dd class="cmt"><p>reliable request-reply channel id.</p></dd><dt class="param">failureCount</dt><dd class="cmt"><p>number of times a request sender received this reply
+       (duplicates not counted). Starts from 1 for every request.</p></dd><dt class="param">request</dt><dd class="cmt"><p>the corresponding request.</p></dd><dt class="param">t</dt><dd class="cmt"><p>throwable extracted from <code>akka.actor.Status.Failure</code>.
+</p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@SerialVersionUID</span><span class="args">(<span>
+      
+      <span class="symbol">1L</span>
+    </span>)</span>
+              
+        </dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -65,7 +74,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.eligosource.eventsourced.patterns.ReliableRequestReply"><span>ReliableRequestReply</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure"><span>DestinationFailure</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -83,27 +92,27 @@
 
       <div id="template">
         <div id="allMembers">
-        
-
-        <div id="types" class="types members">
-              <h3>Type Members</h3>
-              <ol><li name="org.eligosource.eventsourced.patterns.ReliableRequestReply.ReliableRequestReplyChannelProps" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ReliableRequestReplyChannelPropsextendsChannelPropswithProductwithSerializable"></a>
-      <a id="ReliableRequestReplyChannelProps:ReliableRequestReplyChannelProps"></a>
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(channelId:Int,failureCount:Int,request:Any,t:Throwable):org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure"></a>
+      <a id="&lt;init&gt;:DestinationFailure"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">case class</span>
+        <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <a href="ReliableRequestReply$ReliableRequestReplyChannelProps.html"><span class="name">ReliableRequestReplyChannelProps</span></a><span class="params">(<span name="id">id: <span class="extype" name="scala.Int">Int</span></span>, <span name="destination">destination: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>, <span name="replyTimeout">replyTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(5).seconds">...</span></span>, <span name="policy">policy: <a href="../core/RedeliveryPolicy.html" class="extype" name="org.eligosource.eventsourced.core.RedeliveryPolicy">RedeliveryPolicy</a> = <span class="defval" name="{<br/>&amp;nbsp;&amp;nbsp;  val qual$1: org.eligosource.eventsourced.core.RedeliveryPolicy = org.eligosource.eventsourced.core.RedeliveryPolicy.apply();<br/>&amp;nbsp;&amp;nbsp;  val x$2: scala.concurrent.duration.FiniteDuration = scala.concurrent.duration.`package`.DurationInt(10).seconds;<br/>&amp;nbsp;&amp;nbsp;  val x$3: scala.concurrent.duration.FiniteDuration = qual$1.copy$default$2;<br/>&amp;nbsp;&amp;nbsp;  val x$4: Int = qual$1.copy$default$3;<br/>&amp;nbsp;&amp;nbsp;  val x$5: scala.concurrent.duration.FiniteDuration = qual$1.copy$default$4;<br/>&amp;nbsp;&amp;nbsp;  val x$6: Int = qual$1.copy$default$5;<br/>&amp;nbsp;&amp;nbsp;  qual$1.copy(x$2, x$3, x$4, x$5, x$6)<br/>&amp;nbsp;&amp;nbsp;}">...</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="../core/ChannelProps.html" class="extype" name="org.eligosource.eventsourced.core.ChannelProps">ChannelProps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">DestinationFailure</span><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>, <span name="failureCount">failureCount: <span class="extype" name="scala.Int">Int</span></span>, <span name="request">request: <span class="extype" name="scala.Any">Any</span></span>, <span name="t">t: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span>
       </span>
       </h4>
-      <p class="comment cmt">Reliable request-reply channel configuration object used to configure a
-<a href="../core/ReliableChannel.html" class="extype" name="org.eligosource.eventsourced.core.ReliableChannel">org.eligosource.eventsourced.core.ReliableChannel</a> and a proxy for
-<code>destination</code>.</p>
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">channelId</dt><dd class="cmt"><p>reliable request-reply channel id.</p></dd><dt class="param">failureCount</dt><dd class="cmt"><p>number of times a request sender received this reply
+       (duplicates not counted). Starts from 1 for every request.</p></dd><dt class="param">request</dt><dd class="cmt"><p>the corresponding request.</p></dd><dt class="param">t</dt><dd class="cmt"><p>throwable extracted from <code>akka.actor.Status.Failure</code>.
+</p></dd></dl></div>
     </li></ol>
             </div>
+
+        
 
         
 
@@ -187,6 +196,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure#channelId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="channelId:Int"></a>
+      <a id="channelId:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">channelId</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">reliable request-reply channel id.</p>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -216,19 +238,21 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="equals(x$1:Any):Boolean"></a>
-      <a id="equals(Any):Boolean"></a>
+    </li><li name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure#failureCount" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="failureCount:Int"></a>
+      <a id="failureCount:Int"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">def</span>
+        <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+        <span class="name">failureCount</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+      <p class="shortcomment cmt">number of times a request sender received this reply
+       (duplicates not counted).</p><div class="fullcomment"><div class="comment cmt"><p>number of times a request sender received this reply
+       (duplicates not counted). Starts from 1 for every request.</p></div></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -255,19 +279,6 @@
       </span>
       <span class="symbol">
         <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="hashCode():Int"></a>
-      <a id="hashCode():Int"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
@@ -323,6 +334,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure#request" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="request:Any"></a>
+      <a id="request:Any"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">request</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">the corresponding request.</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -336,19 +360,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="toString():String"></a>
-      <a id="toString():String"></a>
+    </li><li name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure#t" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="t:Throwable"></a>
+      <a id="t:Throwable"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">def</span>
+        <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+        <span class="name">t</span><span class="result">: <span class="extype" name="scala.Throwable">Throwable</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+      <p class="shortcomment cmt">throwable extracted from <code>akka.actor.Status.Failure</code>.</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -406,7 +430,15 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.Product">
+              <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
+            </div><div class="parent" name="scala.Equals">
+              <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>

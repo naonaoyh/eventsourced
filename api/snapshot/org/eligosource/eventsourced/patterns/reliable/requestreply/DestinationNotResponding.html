@@ -2,22 +2,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>DestinationFailure - org.eligosource.eventsourced.patterns.DestinationFailure</title>
-          <meta name="description" content="DestinationFailure - org.eligosource.eventsourced.patterns.DestinationFailure" />
-          <meta name="keywords" content="DestinationFailure org.eligosource.eventsourced.patterns.DestinationFailure" />
+          <title>DestinationNotResponding - org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationNotResponding</title>
+          <meta name="description" content="DestinationNotResponding - org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationNotResponding" />
+          <meta name="keywords" content="DestinationNotResponding org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationNotResponding" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
-      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
-      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
-      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      <link href="../../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/tools.tooltip.js"></script>
       
       <script type="text/javascript">
          if(top === self) {
-            var url = '../../../../index.html';
-            var hash = 'org.eligosource.eventsourced.patterns.DestinationFailure';
+            var url = '../../../../../../index.html';
+            var hash = 'org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationNotResponding';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -29,9 +29,9 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../../lib/class_big.png" />
-        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.patterns">patterns</a></p>
-        <h1>DestinationFailure</h1>
+        <img src="../../../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../../../package.html" class="extype" name="org">org</a>.<a href="../../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced.patterns">patterns</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.patterns.reliable">reliable</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.patterns.reliable.requestreply">requestreply</a></p>
+        <h1>DestinationNotResponding</h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -40,14 +40,13 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">DestinationFailure</span><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>, <span name="failureCount">failureCount: <span class="extype" name="scala.Int">Int</span></span>, <span name="request">request: <span class="extype" name="scala.Any">Any</span></span>, <span name="t">t: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">DestinationNotResponding</span><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>, <span name="failureCount">failureCount: <span class="extype" name="scala.Int">Int</span></span>, <span name="request">request: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Reply message to a request sender if the destination of a reliable request-reply
-channel responds with <code>akka.actor.Status.Failure</code>.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Reply message to a request sender if the destination does not respond.
 </p></div><dl class="paramcmts block"><dt class="param">channelId</dt><dd class="cmt"><p>reliable request-reply channel id.</p></dd><dt class="param">failureCount</dt><dd class="cmt"><p>number of times a request sender received this reply
-       (duplicates not counted). Starts from 1 for every request.</p></dd><dt class="param">request</dt><dd class="cmt"><p>the corresponding request.</p></dd><dt class="param">t</dt><dd class="cmt"><p>throwable extracted from <code>akka.actor.Status.Failure</code>.
+       (duplicates not counted). Starts from 1 for every request.</p></dd><dt class="param">request</dt><dd class="cmt"><p>the corresponding request.
 </p></dd></dl><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@SerialVersionUID</span><span class="args">(<span>
       
@@ -74,7 +73,7 @@ channel responds with <code>akka.actor.Status.Failure</code>.
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.eligosource.eventsourced.patterns.DestinationFailure"><span>DestinationFailure</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationNotResponding"><span>DestinationNotResponding</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -94,20 +93,20 @@ channel responds with <code>akka.actor.Status.Failure</code>.
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="org.eligosource.eventsourced.patterns.DestinationFailure#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(channelId:Int,failureCount:Int,request:Any,t:Throwable):org.eligosource.eventsourced.patterns.DestinationFailure"></a>
-      <a id="&lt;init&gt;:DestinationFailure"></a>
+              <ol><li name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationNotResponding#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(channelId:Int,failureCount:Int,request:Any):org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationNotResponding"></a>
+      <a id="&lt;init&gt;:DestinationNotResponding"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">DestinationFailure</span><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>, <span name="failureCount">failureCount: <span class="extype" name="scala.Int">Int</span></span>, <span name="request">request: <span class="extype" name="scala.Any">Any</span></span>, <span name="t">t: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span>
+        <span class="name">DestinationNotResponding</span><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>, <span name="failureCount">failureCount: <span class="extype" name="scala.Int">Int</span></span>, <span name="request">request: <span class="extype" name="scala.Any">Any</span></span>)</span>
       </span>
       </h4>
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">channelId</dt><dd class="cmt"><p>reliable request-reply channel id.</p></dd><dt class="param">failureCount</dt><dd class="cmt"><p>number of times a request sender received this reply
-       (duplicates not counted). Starts from 1 for every request.</p></dd><dt class="param">request</dt><dd class="cmt"><p>the corresponding request.</p></dd><dt class="param">t</dt><dd class="cmt"><p>throwable extracted from <code>akka.actor.Status.Failure</code>.
+       (duplicates not counted). Starts from 1 for every request.</p></dd><dt class="param">request</dt><dd class="cmt"><p>the corresponding request.
 </p></dd></dl></div>
     </li></ol>
             </div>
@@ -196,7 +195,7 @@ channel responds with <code>akka.actor.Status.Failure</code>.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.patterns.DestinationFailure#channelId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationNotResponding#channelId" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="channelId:Int"></a>
       <a id="channelId:Int"></a>
       <h4 class="signature">
@@ -238,7 +237,7 @@ channel responds with <code>akka.actor.Status.Failure</code>.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.patterns.DestinationFailure#failureCount" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationNotResponding#failureCount" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="failureCount:Int"></a>
       <a id="failureCount:Int"></a>
       <h4 class="signature">
@@ -334,7 +333,7 @@ channel responds with <code>akka.actor.Status.Failure</code>.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.patterns.DestinationFailure#request" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+    </li><li name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationNotResponding#request" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="request:Any"></a>
       <a id="request:Any"></a>
       <h4 class="signature">
@@ -360,19 +359,6 @@ channel responds with <code>akka.actor.Status.Failure</code>.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.patterns.DestinationFailure#t" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="t:Throwable"></a>
-      <a id="t:Throwable"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">t</span><span class="result">: <span class="extype" name="scala.Throwable">Throwable</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">throwable extracted from <code>akka.actor.Status.Failure</code>.</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
