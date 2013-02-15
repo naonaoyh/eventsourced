@@ -52,8 +52,8 @@ mediate reliable request-reply interactions between a request sender
 created by <code>createChannel</code> has the following properties in addition to a
 plain reliable channel:</p><ul><li>extracts requests from received <a href="../../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">org.eligosource.eventsourced.core.Message</a>s
    before sending them to <code>destination</code>.</li><li>wraps replies from <code>destination</code> into a <code>Message</code> before sending them back to the
-   request sender.</li><li>sends a special <span class="extype" name="org.eligosource.eventsourced.patterns.DestinationNotResponding">org.eligosource.eventsourced.patterns.DestinationNotResponding</span>
-   reply to the request sender if the destination doesn't reply within  <code>replyTimeout</code>.</li><li>sends a special <span class="extype" name="org.eligosource.eventsourced.patterns.DestinationFailure">org.eligosource.eventsourced.patterns.DestinationFailure</span> reply
+   request sender.</li><li>sends a special <a href="DestinationNotResponding.html" class="extype" name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationNotResponding">org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationNotResponding</a>
+   reply to the request sender if the destination doesn't reply within  <code>replyTimeout</code>.</li><li>sends a special <a href="DestinationFailure.html" class="extype" name="org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure">org.eligosource.eventsourced.patterns.reliable.requestreply.DestinationFailure</a> reply
    to the request sender if <code>destination</code> responds with <code>akka.actor.Status.Failure</code>.</li><li>guarantees at-least-once delivery of requests to <code>destination</code>.</li><li>guarantees at-least-once delivery of replies to the request sender.</li><li>requires a positive receipt confirmation for a reply to mark a request-reply
    interaction as successfully completed.</li><li>redelivers requests, and subsequently replies, on missing or negative receipt
    confirmations.
