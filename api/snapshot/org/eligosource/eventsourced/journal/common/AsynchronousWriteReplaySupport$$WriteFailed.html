@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>SnapshottedReplay - org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.SnapshottedReplay</title>
-          <meta name="description" content="SnapshottedReplay - org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.SnapshottedReplay" />
-          <meta name="keywords" content="SnapshottedReplay org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.SnapshottedReplay" />
+          <title>WriteFailed - org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.WriteFailed</title>
+          <meta name="description" content="WriteFailed - org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.WriteFailed" />
+          <meta name="keywords" content="WriteFailed org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.WriteFailed" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -17,7 +17,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../../index.html';
-            var hash = 'org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal$$SnapshottedReplay';
+            var hash = 'org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport$$WriteFailed';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -30,8 +30,8 @@
         <body class="type">
       <div id="definition">
         <img src="../../../../../lib/class_big.png" />
-        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.journal">journal</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.journal.common">common</a>.<a href="ConcurrentWriteJournal$.html" class="extype" name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal">ConcurrentWriteJournal</a></p>
-        <h1>SnapshottedReplay</h1>
+        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.journal">journal</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.journal.common">common</a>.<a href="AsynchronousWriteReplaySupport$.html" class="extype" name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport">AsynchronousWriteReplaySupport</a></p>
+        <h1>WriteFailed</h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -40,7 +40,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">SnapshottedReplay</span><span class="params">(<span name="replayCmd">replayCmd: <span class="extype" name="scala.Any">Any</span></span>, <span name="toSequencerNr">toSequencerNr: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">WriteFailed</span><span class="params">(<span name="cmd">cmd: <span class="extype" name="scala.Any">Any</span></span>, <span name="cause">cause: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -64,7 +64,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.SnapshottedReplay"><span>SnapshottedReplay</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.WriteFailed"><span>WriteFailed</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -84,16 +84,16 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.SnapshottedReplay#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(replayCmd:Any,toSequencerNr:Long):org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.SnapshottedReplay"></a>
-      <a id="&lt;init&gt;:SnapshottedReplay"></a>
+              <ol><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.WriteFailed#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(cmd:Any,cause:Throwable):org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.WriteFailed"></a>
+      <a id="&lt;init&gt;:WriteFailed"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">SnapshottedReplay</span><span class="params">(<span name="replayCmd">replayCmd: <span class="extype" name="scala.Any">Any</span></span>, <span name="toSequencerNr">toSequencerNr: <span class="extype" name="scala.Long">Long</span></span>)</span>
+        <span class="name">WriteFailed</span><span class="params">(<span name="cmd">cmd: <span class="extype" name="scala.Any">Any</span></span>, <span name="cause">cause: <span class="extype" name="scala.Throwable">Throwable</span></span>)</span>
       </span>
       </h4>
       
@@ -184,6 +184,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.WriteFailed#cause" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cause:Throwable"></a>
+      <a id="cause:Throwable"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cause</span><span class="result">: <span class="extype" name="scala.Throwable">Throwable</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -200,6 +213,19 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.WriteFailed#cmd" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="cmd:Any"></a>
+      <a id="cmd:Any"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">cmd</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -294,19 +320,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.SnapshottedReplay#replayCmd" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="replayCmd:Any"></a>
-      <a id="replayCmd:Any"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">replayCmd</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -320,19 +333,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.ConcurrentWriteJournal.SnapshottedReplay#toSequencerNr" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="toSequencerNr:Long"></a>
-      <a id="toSequencerNr:Long"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">toSequencerNr</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
