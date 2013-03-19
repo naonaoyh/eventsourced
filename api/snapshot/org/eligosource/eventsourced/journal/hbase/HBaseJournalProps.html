@@ -53,11 +53,25 @@ actors can be created from a configuration object as follows:</p><pre><span clas
 <span class="kw">implicit</span> <span class="kw">val</span> system: ActorSystem = ...
 
 <span class="kw">val</span> zookeeperQuorum: <span class="std">String</span> = ... <span class="cmt">// "localhost", for example</span>
-<span class="kw">val</span> journal: ActorRef = Journal(HBaseJournalProps(zookeeperQuorum))</pre></div><dl class="paramcmts block"><dt class="param">zookeeperQuorum</dt><dd class="cmt"><p>Comma separated list of servers in the ZooKeeper quorum.
+<span class="kw">val</span> journal: ActorRef = Journal(HBaseJournalProps(zookeeperQuorum))</pre><p>For storing event messages to HBase, an HBase table must be initially created. The following
+example application creates a table that is pre-split into 16 regions. The HBase configuration
+is specified with a <span class="extype" name="org.apache.hadoop.conf.Configuration">org.apache.hadoop.conf.Configuration</span> object.</p><pre><span class="kw">import</span> org.apache.hadoop.conf.Configuration
+<span class="kw">import</span> org.eligosource.eventsourced.journal.hbase.CreateSchema
+
+<span class="kw">class</span> Temp {
+  <span class="kw">val</span> config: Configuration = ... <span class="cmt">// HBase/Hadoop configuration</span>
+  <span class="kw">val</span> regions = <span class="num">16</span>                <span class="cmt">// number of predefined regions</span>
+
+  CreateSchema(config, regions)
+}</pre><p>Event messages will be evenly distributed (partitioned) across regions. This requires the
+<code>partitionCount</code> of this configuration object to match the number of <code>regions</code> used for table
+creation. An initially defined <code>partitionCount</code> must not be changed later for an existing
+event message table.
+</p></div><dl class="paramcmts block"><dt class="param">zookeeperQuorum</dt><dd class="cmt"><p>Comma separated list of servers in the ZooKeeper quorum.
        See also the <code>hbase.zookeeper.quorum</code>
        <a href="http://hbase.apache.org/book/config.files.html" target="_blank">configuration</a> property.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.</p></dd><dt class="param">partitionCount</dt><dd class="cmt"><p>Number of HBase regions to use for distributing event messages
        across region servers. <b>Do not change this setting once used with an existing
-       HBase instance</b>.</p></dd><dt class="param">writerCount</dt><dd class="cmt"><p>Number of concurrent writers.</p></dd><dt class="param">writeTimeout</dt><dd class="cmt"><p>Timeout for asynchronous writes.</p></dd><dt class="param">replayChunkSize</dt><dd class="cmt"><p>Maximum number of event messages to keep in memory during replay.
+       event message table</b>.</p></dd><dt class="param">writerCount</dt><dd class="cmt"><p>Number of concurrent writers.</p></dd><dt class="param">writeTimeout</dt><dd class="cmt"><p>Timeout for asynchronous writes.</p></dd><dt class="param">replayChunkSize</dt><dd class="cmt"><p>Maximum number of event messages to keep in memory during replay.
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -114,7 +128,7 @@ actors can be created from a configuration object as follows:</p><pre><span clas
        See also the <code>hbase.zookeeper.quorum</code>
        <a href="http://hbase.apache.org/book/config.files.html" target="_blank">configuration</a> property.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.</p></dd><dt class="param">partitionCount</dt><dd class="cmt"><p>Number of HBase regions to use for distributing event messages
        across region servers. <b>Do not change this setting once used with an existing
-       HBase instance</b>.</p></dd><dt class="param">writerCount</dt><dd class="cmt"><p>Number of concurrent writers.</p></dd><dt class="param">writeTimeout</dt><dd class="cmt"><p>Timeout for asynchronous writes.</p></dd><dt class="param">replayChunkSize</dt><dd class="cmt"><p>Maximum number of event messages to keep in memory during replay.
+       event message table</b>.</p></dd><dt class="param">writerCount</dt><dd class="cmt"><p>Number of concurrent writers.</p></dd><dt class="param">writeTimeout</dt><dd class="cmt"><p>Timeout for asynchronous writes.</p></dd><dt class="param">replayChunkSize</dt><dd class="cmt"><p>Maximum number of event messages to keep in memory during replay.
 </p></dd></dl></div>
     </li></ol>
             </div>
@@ -368,7 +382,7 @@ actors can be created from a configuration object as follows:</p><pre><span clas
       <p class="shortcomment cmt">Number of HBase regions to use for distributing event messages
        across region servers.</p><div class="fullcomment"><div class="comment cmt"><p>Number of HBase regions to use for distributing event messages
        across region servers. <b>Do not change this setting once used with an existing
-       HBase instance</b>.</p></div></div>
+       event message table</b>.</p></div></div>
     </li><li name="org.eligosource.eventsourced.journal.hbase.HBaseJournalProps#replayChunkSize" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="replayChunkSize:Int"></a>
       <a id="replayChunkSize:Int"></a>
