@@ -40,7 +40,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">HBaseJournalProps</span><span class="params">(<span name="zookeeperQuorum">zookeeperQuorum: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="partitionCount">partitionCount: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16</span></span>, <span name="writerCount">writerCount: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16</span></span>, <span name="writeTimeout">writeTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(10).seconds">...</span></span>, <span name="replayChunkSize">replayChunkSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16.*(100)</span></span>)</span><span class="result"> extends <a href="../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">HBaseJournalProps</span><span class="params">(<span name="zookeeperQuorum">zookeeperQuorum: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="partitionCount">partitionCount: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16</span></span>, <span name="writerCount">writerCount: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16</span></span>, <span name="writeTimeout">writeTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(10).seconds">...</span></span>, <span name="initTimeout">initTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(30).seconds">...</span></span>, <span name="replayChunkSize">replayChunkSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16.*(100)</span></span>)</span><span class="result"> extends <a href="../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -71,7 +71,8 @@ event message table.
        See also the <code>hbase.zookeeper.quorum</code>
        <a href="http://hbase.apache.org/book/config.files.html" target="_blank">configuration</a> property.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.</p></dd><dt class="param">partitionCount</dt><dd class="cmt"><p>Number of HBase regions to use for distributing event messages
        across region servers. <b>Do not change this setting once used with an existing
-       event message table</b>.</p></dd><dt class="param">writerCount</dt><dd class="cmt"><p>Number of concurrent writers.</p></dd><dt class="param">writeTimeout</dt><dd class="cmt"><p>Timeout for asynchronous writes.</p></dd><dt class="param">replayChunkSize</dt><dd class="cmt"><p>Maximum number of event messages to keep in memory during replay.
+       event message table</b>.</p></dd><dt class="param">writerCount</dt><dd class="cmt"><p>Number of concurrent writers.</p></dd><dt class="param">writeTimeout</dt><dd class="cmt"><p>Timeout for asynchronous writes.</p></dd><dt class="param">initTimeout</dt><dd class="cmt"><p>Timeout for journal initialization. During initialization
+       the highest stored sequence number is loaded from the event message table.</p></dd><dt class="param">replayChunkSize</dt><dd class="cmt"><p>Maximum number of event messages to keep in memory during replay.
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -113,7 +114,7 @@ event message table.
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="org.eligosource.eventsourced.journal.hbase.HBaseJournalProps#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(zookeeperQuorum:String,name:Option[String],dispatcherName:Option[String],partitionCount:Int,writerCount:Int,writeTimeout:scala.concurrent.duration.FiniteDuration,replayChunkSize:Int):org.eligosource.eventsourced.journal.hbase.HBaseJournalProps"></a>
+      <a id="&lt;init&gt;(zookeeperQuorum:String,name:Option[String],dispatcherName:Option[String],partitionCount:Int,writerCount:Int,writeTimeout:scala.concurrent.duration.FiniteDuration,initTimeout:scala.concurrent.duration.FiniteDuration,replayChunkSize:Int):org.eligosource.eventsourced.journal.hbase.HBaseJournalProps"></a>
       <a id="&lt;init&gt;:HBaseJournalProps"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -121,14 +122,15 @@ event message table.
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">HBaseJournalProps</span><span class="params">(<span name="zookeeperQuorum">zookeeperQuorum: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="partitionCount">partitionCount: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16</span></span>, <span name="writerCount">writerCount: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16</span></span>, <span name="writeTimeout">writeTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(10).seconds">...</span></span>, <span name="replayChunkSize">replayChunkSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16.*(100)</span></span>)</span>
+        <span class="name">HBaseJournalProps</span><span class="params">(<span name="zookeeperQuorum">zookeeperQuorum: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="partitionCount">partitionCount: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16</span></span>, <span name="writerCount">writerCount: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16</span></span>, <span name="writeTimeout">writeTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(10).seconds">...</span></span>, <span name="initTimeout">initTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(30).seconds">...</span></span>, <span name="replayChunkSize">replayChunkSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16.*(100)</span></span>)</span>
       </span>
       </h4>
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">zookeeperQuorum</dt><dd class="cmt"><p>Comma separated list of servers in the ZooKeeper quorum.
        See also the <code>hbase.zookeeper.quorum</code>
        <a href="http://hbase.apache.org/book/config.files.html" target="_blank">configuration</a> property.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.</p></dd><dt class="param">partitionCount</dt><dd class="cmt"><p>Number of HBase regions to use for distributing event messages
        across region servers. <b>Do not change this setting once used with an existing
-       event message table</b>.</p></dd><dt class="param">writerCount</dt><dd class="cmt"><p>Number of concurrent writers.</p></dd><dt class="param">writeTimeout</dt><dd class="cmt"><p>Timeout for asynchronous writes.</p></dd><dt class="param">replayChunkSize</dt><dd class="cmt"><p>Maximum number of event messages to keep in memory during replay.
+       event message table</b>.</p></dd><dt class="param">writerCount</dt><dd class="cmt"><p>Number of concurrent writers.</p></dd><dt class="param">writeTimeout</dt><dd class="cmt"><p>Timeout for asynchronous writes.</p></dd><dt class="param">initTimeout</dt><dd class="cmt"><p>Timeout for journal initialization. During initialization
+       the highest stored sequence number is loaded from the event message table.</p></dd><dt class="param">replayChunkSize</dt><dd class="cmt"><p>Maximum number of event messages to keep in memory during replay.
 </p></dd></dl></div>
     </li></ol>
             </div>
@@ -288,6 +290,20 @@ event message table.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.hbase.HBaseJournalProps#initTimeout" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="initTimeout:scala.concurrent.duration.FiniteDuration"></a>
+      <a id="initTimeout:FiniteDuration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">initTimeout</span><span class="result">: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Timeout for journal initialization.</p><div class="fullcomment"><div class="comment cmt"><p>Timeout for journal initialization. During initialization
+       the highest stored sequence number is loaded from the event message table.</p></div></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -467,6 +483,19 @@ event message table.
       </span>
       <span class="symbol">
         <span class="name">withDispatcherName</span><span class="params">(<span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="" class="extype" name="org.eligosource.eventsourced.journal.hbase.HBaseJournalProps">HBaseJournalProps</a></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.hbase.HBaseJournalProps#withInitTimeout" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withInitTimeout(initTimeout:scala.concurrent.duration.FiniteDuration):org.eligosource.eventsourced.journal.hbase.HBaseJournalProps"></a>
+      <a id="withInitTimeout(FiniteDuration):HBaseJournalProps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withInitTimeout</span><span class="params">(<span name="initTimeout">initTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span></span>)</span><span class="result">: <a href="" class="extype" name="org.eligosource.eventsourced.journal.hbase.HBaseJournalProps">HBaseJournalProps</a></span>
       </span>
       </h4>
       

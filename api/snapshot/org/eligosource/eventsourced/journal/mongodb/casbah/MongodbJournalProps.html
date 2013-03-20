@@ -40,7 +40,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">MongodbJournalProps</span><span class="params">(<span name="journalColl">journalColl: <span class="extype" name="com.mongodb.casbah.TypeImports.MongoCollection">com.mongodb.casbah.Imports.MongoCollection</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="../../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">MongodbJournalProps</span><span class="params">(<span name="mongoClient">mongoClient: <span class="extype" name="com.mongodb.casbah.TypeImports.MongoClient">com.mongodb.casbah.Imports.MongoClient</span></span>, <span name="dbName">dbName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="collName">collName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span><span class="result"> extends <a href="../../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -51,7 +51,7 @@
 
 <span class="kw">implicit</span> <span class="kw">val</span> system: ActorSystem = ...
 
-<span class="kw">val</span> journal: ActorRef = Journal(MongodbJournalProps(journalConn))</pre></div><dl class="paramcmts block"><dt class="param">journalColl</dt><dd class="cmt"><p>Required Mongodb/Casbah collection.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.
+<span class="kw">val</span> journal: ActorRef = Journal(MongodbJournalProps(journalConn))</pre></div><dl class="paramcmts block"><dt class="param">mongoClient</dt><dd class="cmt"><p>Required mongoDB/Casbah client.</p></dd><dt class="param">dbName</dt><dd class="cmt"><p>Required mongoDB database name.</p></dd><dt class="param">collName</dt><dd class="cmt"><p>Required mongoDB collection name.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="../../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -93,7 +93,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="org.eligosource.eventsourced.journal.mongodb.casbah.MongodbJournalProps#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(journalColl:com.mongodb.casbah.Imports.MongoCollection,name:Option[String],dispatcherName:Option[String]):org.eligosource.eventsourced.journal.mongodb.casbah.MongodbJournalProps"></a>
+      <a id="&lt;init&gt;(mongoClient:com.mongodb.casbah.Imports.MongoClient,dbName:String,collName:String,name:Option[String],dispatcherName:Option[String]):org.eligosource.eventsourced.journal.mongodb.casbah.MongodbJournalProps"></a>
       <a id="&lt;init&gt;:MongodbJournalProps"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -101,10 +101,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">MongodbJournalProps</span><span class="params">(<span name="journalColl">journalColl: <span class="extype" name="com.mongodb.casbah.TypeImports.MongoCollection">com.mongodb.casbah.Imports.MongoCollection</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span>
+        <span class="name">MongodbJournalProps</span><span class="params">(<span name="mongoClient">mongoClient: <span class="extype" name="com.mongodb.casbah.TypeImports.MongoClient">com.mongodb.casbah.Imports.MongoClient</span></span>, <span name="dbName">dbName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="collName">collName: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>)</span>
       </span>
       </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">journalColl</dt><dd class="cmt"><p>Required Mongodb/Casbah collection.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">mongoClient</dt><dd class="cmt"><p>Required mongoDB/Casbah client.</p></dd><dt class="param">dbName</dt><dd class="cmt"><p>Required mongoDB database name.</p></dd><dt class="param">collName</dt><dd class="cmt"><p>Required mongoDB collection name.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.
 </p></dd></dl></div>
     </li></ol>
             </div>
@@ -209,6 +209,32 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.mongodb.casbah.MongodbJournalProps#collName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="collName:String"></a>
+      <a id="collName:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">collName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Required mongoDB collection name.</p>
+    </li><li name="org.eligosource.eventsourced.journal.mongodb.casbah.MongodbJournalProps#dbName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="dbName:String"></a>
+      <a id="dbName:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">dbName</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Required mongoDB database name.</p>
     </li><li name="org.eligosource.eventsourced.journal.mongodb.casbah.MongodbJournalProps#dispatcherName" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="dispatcherName:Option[String]"></a>
       <a id="dispatcherName:Option[String]"></a>
@@ -265,22 +291,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.mongodb.casbah.MongodbJournalProps#indexes" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="indexes:com.mongodb.casbah.commons.Imports.DBObject"></a>
-      <a id="indexes:com.mongodb.casbah.commons.Imports.DBObject"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">indexes</span><span class="result">: <span class="extype" name="com.mongodb.casbah.commons.TypeImports.DBObject">com.mongodb.casbah.commons.Imports.DBObject</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Create index as ObjectId is used as &quot;_id&quot;.</p><div class="fullcomment"><div class="comment cmt"><p>Create index as ObjectId is used as &quot;_id&quot;. This is required because the mongoDB journal uses this as a unique
-index that is lexicographically sorted order by (processorId, initiatingChannelId, sequenceNr,
-confirmingChannelId).
-</p></div></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -308,19 +318,19 @@ confirmingChannelId).
       </h4>
       <p class="shortcomment cmt">Creates a journal actor instance.</p><div class="fullcomment"><div class="comment cmt"><p>Creates a journal actor instance.
 </p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.journal.mongodb.casbah.MongodbJournalProps">MongodbJournalProps</a> → <a href="../../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a></dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.mongodb.casbah.MongodbJournalProps#journalColl" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="journalColl:com.mongodb.casbah.Imports.MongoCollection"></a>
-      <a id="journalColl:com.mongodb.casbah.Imports.MongoCollection"></a>
+    </li><li name="org.eligosource.eventsourced.journal.mongodb.casbah.MongodbJournalProps#mongoClient" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="mongoClient:com.mongodb.casbah.Imports.MongoClient"></a>
+      <a id="mongoClient:com.mongodb.casbah.Imports.MongoClient"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">journalColl</span><span class="result">: <span class="extype" name="com.mongodb.casbah.TypeImports.MongoCollection">com.mongodb.casbah.Imports.MongoCollection</span></span>
+        <span class="name">mongoClient</span><span class="result">: <span class="extype" name="com.mongodb.casbah.TypeImports.MongoClient">com.mongodb.casbah.Imports.MongoClient</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Required Mongodb/Casbah collection.</p>
+      <p class="shortcomment cmt">Required mongoDB/Casbah client.</p>
     </li><li name="org.eligosource.eventsourced.journal.mongodb.casbah.MongodbJournalProps#name" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="name:Option[String]"></a>
       <a id="name:Option[String]"></a>
@@ -373,20 +383,6 @@ confirmingChannelId).
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.mongodb.casbah.MongodbJournalProps#options" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="options:com.mongodb.casbah.commons.Imports.DBObject"></a>
-      <a id="options:com.mongodb.casbah.commons.Imports.DBObject"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">options</span><span class="result">: <span class="extype" name="com.mongodb.casbah.commons.TypeImports.DBObject">com.mongodb.casbah.commons.Imports.DBObject</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Create index option for uniqueness.</p><div class="fullcomment"><div class="comment cmt"><p>Create index option for uniqueness. Required so we do not get duplicates.
-</p></div></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
