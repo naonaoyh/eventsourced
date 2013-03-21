@@ -95,10 +95,23 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="HBaseJournalProps.html"><span class="name">HBaseJournalProps</span></a><span class="params">(<span name="zookeeperQuorum">zookeeperQuorum: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="partitionCount">partitionCount: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16</span></span>, <span name="writerCount">writerCount: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16</span></span>, <span name="writeTimeout">writeTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(10).seconds">...</span></span>, <span name="initTimeout">initTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(30).seconds">...</span></span>, <span name="replayChunkSize">replayChunkSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16.*(100)</span></span>)</span><span class="result"> extends <a href="../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="HBaseJournalProps.html"><span class="name">HBaseJournalProps</span></a><span class="params">(<span name="zookeeperQuorum">zookeeperQuorum: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="tableName">tableName: <span class="extype" name="scala.Predef.String">String</span> = <span class="defval" name="hbase.this.`package`.DefaultTableName">...</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="writerCount">writerCount: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16</span></span>, <span name="writeTimeout">writeTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(10).seconds">...</span></span>, <span name="initTimeout">initTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(30).seconds">...</span></span>, <span name="replayChunkSize">replayChunkSize: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">16.*(100)</span></span>)</span><span class="result"> extends <a href="../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">Configuration object for a <a href="http://hbase.apache.org/" target="_blank">HBase</a> backed journal.</p>
+    </li><li name="org.eligosource.eventsourced.journal.hbase.PartitionCountNotFoundException" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PartitionCountNotFoundExceptionextendsException"></a>
+      <a id="PartitionCountNotFoundException:PartitionCountNotFoundException"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="package$$PartitionCountNotFoundException.html"><span class="name">PartitionCountNotFoundException</span></a><span class="result"> extends <span class="extype" name="scala.Exception">Exception</span></span>
+      </span>
+      </h4>
+      
     </li></ol>
             </div>
 
@@ -145,32 +158,58 @@
       </span>
       </h4>
       
-    </li><li name="org.eligosource.eventsourced.journal.hbase.CreateSchema" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="CreateSchema"></a>
-      <a id="CreateSchema:CreateSchema"></a>
+    </li><li name="org.eligosource.eventsourced.journal.hbase.CreateTable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CreateTable"></a>
+      <a id="CreateTable:CreateTable"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="CreateSchema$.html"><span class="name">CreateSchema</span></a><span class="result"> extends <span class="extype" name="scala.App">App</span></span>
+        <a href="CreateTable$.html"><span class="name">CreateTable</span></a><span class="result"> extends <span class="extype" name="scala.App">App</span></span>
       </span>
       </h4>
       <p class="comment cmt">Creates an HBase event message table.</p>
-    </li><li name="org.eligosource.eventsourced.journal.hbase.DropSchema" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="DropSchema"></a>
-      <a id="DropSchema:DropSchema"></a>
+    </li><li name="org.eligosource.eventsourced.journal.hbase.package#DefaultPartitionCount" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DefaultPartitionCount:Int"></a>
+      <a id="DefaultPartitionCount:Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DefaultPartitionCount</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.hbase.package#DefaultTableName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DefaultTableName:String"></a>
+      <a id="DefaultTableName:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DefaultTableName</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.hbase.DeleteTable" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DeleteTable"></a>
+      <a id="DeleteTable:DeleteTable"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="DropSchema$.html"><span class="name">DropSchema</span></a><span class="result"> extends <span class="extype" name="scala.App">App</span></span>
+        <a href="DeleteTable$.html"><span class="name">DeleteTable</span></a><span class="result"> extends <span class="extype" name="scala.App">App</span></span>
       </span>
       </h4>
-      <p class="comment cmt">Drops an existing HBase event message table.</p>
+      <p class="comment cmt">Deletes an HBase event message table.</p>
     </li><li name="org.eligosource.eventsourced.journal.hbase.package#MsgColumnName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="MsgColumnName:String"></a>
       <a id="MsgColumnName:String"></a>
@@ -197,6 +236,32 @@
       </span>
       </h4>
       
+    </li><li name="org.eligosource.eventsourced.journal.hbase.package#PartitionCountColumnName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PartitionCountColumnName:String"></a>
+      <a id="PartitionCountColumnName:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PartitionCountColumnName</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.hbase.package#PartitionCountColumnNameBytes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PartitionCountColumnNameBytes:Array[Byte]"></a>
+      <a id="PartitionCountColumnNameBytes:Array[Byte]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">PartitionCountColumnNameBytes</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]</span>
+      </span>
+      </h4>
+      
     </li><li name="org.eligosource.eventsourced.journal.hbase.package#SequenceNrColumnName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="SequenceNrColumnName:String"></a>
       <a id="SequenceNrColumnName:String"></a>
@@ -220,32 +285,6 @@
       </span>
       <span class="symbol">
         <span class="name">SequenceNrColumnNameBytes</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]</span>
-      </span>
-      </h4>
-      
-    </li><li name="org.eligosource.eventsourced.journal.hbase.package#TableName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="TableName:String"></a>
-      <a id="TableName:String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">TableName</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="org.eligosource.eventsourced.journal.hbase.package#TableNameBytes" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="TableNameBytes:Array[Byte]"></a>
-      <a id="TableNameBytes:Array[Byte]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">TableNameBytes</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]</span>
       </span>
       </h4>
       
