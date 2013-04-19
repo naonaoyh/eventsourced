@@ -40,12 +40,12 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">LeveldbJournalProps</span><span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="checksum">checksum: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="processorStructured">processorStructured: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="throttleAfter">throttleAfter: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="throttleFor">throttleFor: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(100).milliseconds">...</span></span>)</span><span class="result"> extends <a href="../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">LeveldbJournalProps</span><span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="checksum">checksum: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="processorStructured">processorStructured: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="snapshotDir">snapshotDir: <span class="extype" name="java.io.File">File</span> = <span class="symbol">new java.io.File(&quot;snapshots&quot;)</span></span>, <span name="snapshotSerializer">snapshotSerializer: <a href="../common/SnapshotSerializer.html" class="extype" name="org.eligosource.eventsourced.journal.common.SnapshotSerializer">SnapshotSerializer</a> = <span class="defval" name="org.eligosource.eventsourced.journal.common.SnapshotSerializer.java">...</span></span>, <span name="snapshotSaveTimeout">snapshotSaveTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(1).hour">...</span></span>)</span><span class="result"> extends <a href="../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Configuration object for a <a href="http://code.google.com/p/leveldb/" target="_blank">LevelDB</a> based journal. This
-journal comes with different optimizations to choose from, as described at the methods</p><ul><li><code>withProcessorStructure</code></li><li><code>withSequenceStructure</code></li><li><code>withThrottledReplay</code></li></ul><p>Journal actors can be created from a configuration object as follows:</p><pre><span class="kw">import</span> java.io.File
+journal comes with different optimizations to choose from, as described at the methods</p><ul><li><code>withProcessorStructure</code></li><li><code>withSequenceStructure</code></li></ul><p>Journal actors can be created from a configuration object as follows:</p><pre><span class="kw">import</span> java.io.File
 
 <span class="kw">import</span> akka.actor._
 
@@ -56,9 +56,8 @@ journal comes with different optimizations to choose from, as described at the m
 
 <span class="kw">val</span> journalDir: File = ...
 <span class="kw">val</span> journal: ActorRef = Journal(LeveldbJournalProps(journalDir))</pre></div><dl class="paramcmts block"><dt class="param">dir</dt><dd class="cmt"><p>Journal directory.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.</p></dd><dt class="param">fsync</dt><dd class="cmt"><p><code>true</code> if every write is physically synced. Default is <code>false</code>.</p></dd><dt class="param">checksum</dt><dd class="cmt"><p><code>true</code> if checksums are verified on read. Default is <code>false</code>.</p></dd><dt class="param">processorStructured</dt><dd class="cmt"><p><code>true</code> if entries are primarily ordered by processor
-       id, <code>false</code> if entries are ordered by sequence number.  Default is <code>true</code>.</p></dd><dt class="param">throttleAfter</dt><dd class="cmt"><p><code>0</code> if replay throttling is turned off, or a positive integer
-       to <code>throttleFor</code> after the specified number of replayed event messages.</p></dd><dt class="param">throttleFor</dt><dd class="cmt"><p>Suspend replay for specified duration after <code>throttleAfter</code>
-       replayed event messages.
+       id, <code>false</code> if entries are ordered by sequence number.  Default is <code>true</code>.</p></dd><dt class="param">snapshotDir</dt><dd class="cmt"><p>Directory where the journal will store snapshots. A relative
+       path is relative to <code>dir</code>.</p></dd><dt class="param">snapshotSerializer</dt><dd class="cmt"><p>serializer for writing and reading snapshots.</p></dd><dt class="param">snapshotSaveTimeout</dt><dd class="cmt"><p>Timeout for saving a snapshot.
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -100,7 +99,7 @@ journal comes with different optimizations to choose from, as described at the m
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(dir:java.io.File,name:Option[String],dispatcherName:Option[String],fsync:Boolean,checksum:Boolean,processorStructured:Boolean,throttleAfter:Int,throttleFor:scala.concurrent.duration.FiniteDuration):org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps"></a>
+      <a id="&lt;init&gt;(dir:java.io.File,name:Option[String],dispatcherName:Option[String],fsync:Boolean,checksum:Boolean,processorStructured:Boolean,snapshotDir:java.io.File,snapshotSerializer:org.eligosource.eventsourced.journal.common.SnapshotSerializer,snapshotSaveTimeout:scala.concurrent.duration.FiniteDuration):org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps"></a>
       <a id="&lt;init&gt;:LeveldbJournalProps"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -108,13 +107,12 @@ journal comes with different optimizations to choose from, as described at the m
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">LeveldbJournalProps</span><span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="checksum">checksum: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="processorStructured">processorStructured: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="throttleAfter">throttleAfter: <span class="extype" name="scala.Int">Int</span> = <span class="symbol">0</span></span>, <span name="throttleFor">throttleFor: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(100).milliseconds">...</span></span>)</span>
+        <span class="name">LeveldbJournalProps</span><span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="checksum">checksum: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="processorStructured">processorStructured: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">true</span></span>, <span name="snapshotDir">snapshotDir: <span class="extype" name="java.io.File">File</span> = <span class="symbol">new java.io.File(&quot;snapshots&quot;)</span></span>, <span name="snapshotSerializer">snapshotSerializer: <a href="../common/SnapshotSerializer.html" class="extype" name="org.eligosource.eventsourced.journal.common.SnapshotSerializer">SnapshotSerializer</a> = <span class="defval" name="org.eligosource.eventsourced.journal.common.SnapshotSerializer.java">...</span></span>, <span name="snapshotSaveTimeout">snapshotSaveTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(1).hour">...</span></span>)</span>
       </span>
       </h4>
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">dir</dt><dd class="cmt"><p>Journal directory.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.</p></dd><dt class="param">fsync</dt><dd class="cmt"><p><code>true</code> if every write is physically synced. Default is <code>false</code>.</p></dd><dt class="param">checksum</dt><dd class="cmt"><p><code>true</code> if checksums are verified on read. Default is <code>false</code>.</p></dd><dt class="param">processorStructured</dt><dd class="cmt"><p><code>true</code> if entries are primarily ordered by processor
-       id, <code>false</code> if entries are ordered by sequence number.  Default is <code>true</code>.</p></dd><dt class="param">throttleAfter</dt><dd class="cmt"><p><code>0</code> if replay throttling is turned off, or a positive integer
-       to <code>throttleFor</code> after the specified number of replayed event messages.</p></dd><dt class="param">throttleFor</dt><dd class="cmt"><p>Suspend replay for specified duration after <code>throttleAfter</code>
-       replayed event messages.
+       id, <code>false</code> if entries are ordered by sequence number.  Default is <code>true</code>.</p></dd><dt class="param">snapshotDir</dt><dd class="cmt"><p>Directory where the journal will store snapshots. A relative
+       path is relative to <code>dir</code>.</p></dd><dt class="param">snapshotSerializer</dt><dd class="cmt"><p>serializer for writing and reading snapshots.</p></dd><dt class="param">snapshotSaveTimeout</dt><dd class="cmt"><p>Timeout for saving a snapshot.
 </p></dd></dl></div>
     </li></ol>
             </div>
@@ -423,6 +421,46 @@ journal comes with different optimizations to choose from, as described at the m
  <code>true</code> if entries are ordered by sequence number.</p><div class="fullcomment"><div class="comment cmt"><p> Returns <code>false</code> if entries are primarily ordered by processor id,
  <code>true</code> if entries are ordered by sequence number. Default is <code>false</code>.
 </p></div></div>
+    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps#snapshotDir" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="snapshotDir:java.io.File"></a>
+      <a id="snapshotDir:File"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">snapshotDir</span><span class="result">: <span class="extype" name="java.io.File">File</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Directory where the journal will store snapshots.</p><div class="fullcomment"><div class="comment cmt"><p>Directory where the journal will store snapshots. A relative
+       path is relative to <code>dir</code>.</p></div></div>
+    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps#snapshotSaveTimeout" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="snapshotSaveTimeout:scala.concurrent.duration.FiniteDuration"></a>
+      <a id="snapshotSaveTimeout:FiniteDuration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">snapshotSaveTimeout</span><span class="result">: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Timeout for saving a snapshot.</p>
+    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps#snapshotSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="snapshotSerializer:org.eligosource.eventsourced.journal.common.SnapshotSerializer"></a>
+      <a id="snapshotSerializer:SnapshotSerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">snapshotSerializer</span><span class="result">: <a href="../common/SnapshotSerializer.html" class="extype" name="org.eligosource.eventsourced.journal.common.SnapshotSerializer">SnapshotSerializer</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">serializer for writing and reading snapshots.</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -436,48 +474,6 @@ journal comes with different optimizations to choose from, as described at the m
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps#throttleAfter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="throttleAfter:Int"></a>
-      <a id="throttleAfter:Int"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">throttleAfter</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt"><code>0</code> if replay throttling is turned off, or a positive integer
-       to <code>throttleFor</code> after the specified number of replayed event messages.</p>
-    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps#throttleFor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="throttleFor:scala.concurrent.duration.FiniteDuration"></a>
-      <a id="throttleFor:FiniteDuration"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">throttleFor</span><span class="result">: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Suspend replay for specified duration after <code>throttleAfter</code>
-       replayed event messages.</p>
-    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps#throttledReplay" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="throttledReplay:Boolean"></a>
-      <a id="throttledReplay:Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">throttledReplay</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Returns <code>true</code> if replay will be throttled.</p><div class="fullcomment"><div class="comment cmt"><p>Returns <code>true</code> if replay will be throttled. Only for <code>processorStructured == true</code>.
-</p></div></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -612,22 +608,45 @@ ordered by processor id.</p><p>Pros:</p><ul><li>efficient replay of input messag
 <code>sequenceStructured</code> set to <code>true</code>. With this setting, entries will be ordered by
 sequence number.</p><p>Pros:</p><ul><li>efficient replay of input messages for all processors (batch replay with optional lower bound)</li><li>efficient replay of output messages</li><li>efficient deletion of old entries</li></ul><p>Cons:</p><ul><li>replay of input messages for a single processor requires full scan (with optional lower bound)
 </li></ul></div></div>
-    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps#withThrottledReplay" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="withThrottledReplay(throttleAfter:Int,throttleFor:scala.concurrent.duration.FiniteDuration):org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps"></a>
-      <a id="withThrottledReplay(Int,FiniteDuration):LeveldbJournalProps"></a>
+    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps#withSnapshotDir" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withSnapshotDir(snapshotDir:java.io.File):org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps"></a>
+      <a id="withSnapshotDir(File):LeveldbJournalProps"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">withThrottledReplay</span><span class="params">(<span name="throttleAfter">throttleAfter: <span class="extype" name="scala.Int">Int</span></span>, <span name="throttleFor">throttleFor: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="symbol">100 milliseconds</span></span>)</span><span class="result">: <a href="" class="extype" name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps">LeveldbJournalProps</a></span>
+        <span class="name">withSnapshotDir</span><span class="params">(<span name="snapshotDir">snapshotDir: <span class="extype" name="java.io.File">File</span></span>)</span><span class="result">: <a href="" class="extype" name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps">LeveldbJournalProps</a></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Returns a new <code>LeveldbJournalProps</code> with specified replay throttling settings.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a new <code>LeveldbJournalProps</code> with specified replay throttling settings. Can be used
-to avoid growing of mailboxes of slow processors during replay. Only has effect if
-<code>processorStructured == true</code>.
-</p></div></div>
+      <p class="shortcomment cmt">Returns a new <code>LeveldbJournalProps</code> with specified snapshot directory.</p>
+    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps#withSnapshotSaveTimeout" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withSnapshotSaveTimeout(snapshotSaveTimeout:scala.concurrent.duration.FiniteDuration):org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps"></a>
+      <a id="withSnapshotSaveTimeout(FiniteDuration):LeveldbJournalProps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withSnapshotSaveTimeout</span><span class="params">(<span name="snapshotSaveTimeout">snapshotSaveTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span></span>)</span><span class="result">: <a href="" class="extype" name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps">LeveldbJournalProps</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a new <code>LeveldbJournalProps</code> with specified snapshot save timeout.</p>
+    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps#withSnapshotSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withSnapshotSerializer(snapshotSerializer:org.eligosource.eventsourced.journal.common.SnapshotSerializer):org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps"></a>
+      <a id="withSnapshotSerializer(SnapshotSerializer):LeveldbJournalProps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withSnapshotSerializer</span><span class="params">(<span name="snapshotSerializer">snapshotSerializer: <a href="../common/SnapshotSerializer.html" class="extype" name="org.eligosource.eventsourced.journal.common.SnapshotSerializer">SnapshotSerializer</a></span>)</span><span class="result">: <a href="" class="extype" name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps">LeveldbJournalProps</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a new <code>LeveldbJournalProps</code> with specified snapshot serializer.</p>
     </li></ol>
             </div>
 

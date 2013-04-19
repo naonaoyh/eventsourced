@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>Serialization - org.eligosource.eventsourced.core.Serialization</title>
-          <meta name="description" content="Serialization - org.eligosource.eventsourced.core.Serialization" />
-          <meta name="keywords" content="Serialization org.eligosource.eventsourced.core.Serialization" />
+          <title>ReplayParams - org.eligosource.eventsourced.core.ReplayParams</title>
+          <meta name="description" content="ReplayParams - org.eligosource.eventsourced.core.ReplayParams" />
+          <meta name="keywords" content="ReplayParams org.eligosource.eventsourced.core.ReplayParams" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -17,7 +17,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../index.html';
-            var hash = 'org.eligosource.eventsourced.core.Serialization$';
+            var hash = 'org.eligosource.eventsourced.core.ReplayParams$';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -29,9 +29,9 @@
         </head>
         <body class="value">
       <div id="definition">
-        <a href="Serialization.html" title="Go to companion"><img src="../../../../lib/object_to_class_big.png" /></a>
+        <a href="ReplayParams.html" title="Go to companion"><img src="../../../../lib/object_to_trait_big.png" /></a>
         <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.core">core</a></p>
-        <h1><a href="Serialization.html" title="Go to companion">Serialization</a></h1>
+        <h1><a href="ReplayParams.html" title="Go to companion">ReplayParams</a></h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -40,14 +40,14 @@
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <span class="name">Serialization</span><span class="result"> extends <span class="extype" name="akka.actor.ExtensionId">ExtensionId</span>[<a href="Serialization.html" class="extype" name="org.eligosource.eventsourced.core.Serialization">Serialization</a>] with <span class="extype" name="akka.actor.ExtensionIdProvider">ExtensionIdProvider</span></span>
+        <span class="name">ReplayParams</span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Serialization extension access point.
-</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">org.eligosource.eventsourced.core.ReplayParams</a>
+</p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="akka.actor.ExtensionIdProvider">ExtensionIdProvider</span>, <span class="extype" name="akka.actor.ExtensionId">ExtensionId</span>[<a href="Serialization.html" class="extype" name="org.eligosource.eventsourced.core.Serialization">Serialization</a>], <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -65,7 +65,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.eligosource.eventsourced.core.Serialization"><span>Serialization</span></li><li class="in" name="akka.actor.ExtensionIdProvider"><span>ExtensionIdProvider</span></li><li class="in" name="akka.actor.ExtensionId"><span>ExtensionId</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.eligosource.eventsourced.core.ReplayParams"><span>ReplayParams</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -85,7 +85,36 @@
         <div id="allMembers">
         
 
-        
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SnapshotReplayParamsextendsReplayParamswithProductwithSerializable"></a>
+      <a id="SnapshotReplayParams:SnapshotReplayParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReplayParams$$SnapshotReplayParams.html"><span class="name">SnapshotReplayParams</span></a><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="snapshotBaseFilter">snapshotBaseFilter: (<a href="SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span> = <span class="defval" name="((x$2: org.eligosource.eventsourced.core.SnapshotMetadata) =&gt; true)">...</span></span>, <span name="toSequenceNr">toSequenceNr: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">scala.Long.MaxValue</span></span>)</span><span class="result"> extends <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Processor-specific replay parameters for snapshotted replay.</p>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams.StandardReplayParams" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StandardReplayParamsextendsReplayParamswithProductwithSerializable"></a>
+      <a id="StandardReplayParams:StandardReplayParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ReplayParams$$StandardReplayParams.html"><span class="name">StandardReplayParams</span></a><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="fromSequenceNr">fromSequenceNr: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">0L</span></span>, <span name="toSequenceNr">toSequenceNr: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">scala.Long.MaxValue</span></span>)</span><span class="result"> extends <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Processor-specific replay parameters for non-snapshotted replay.</p>
+    </li></ol>
+            </div>
 
         
 
@@ -156,19 +185,81 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="akka.actor.ExtensionId#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(system:akka.actor.ActorSystem):T"></a>
-      <a id="apply(ActorSystem):Serialization"></a>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(processorId:Int,snapshot:Boolean,toSequenceNr:Long):org.eligosource.eventsourced.core.ReplayParams"></a>
+      <a id="apply(Int,Boolean,Long):ReplayParams"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">apply</span><span class="params">(<span name="system">system: <span class="extype" name="akka.actor.ActorSystem">ActorSystem</span></span>)</span><span class="result">: <a href="Serialization.html" class="extype" name="org.eligosource.eventsourced.core.Serialization">Serialization</a></span>
+        <span class="name">apply</span><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="snapshot">snapshot: <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="toSequenceNr">toSequenceNr: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ExtensionId</dd></dl></div>
+      <p class="shortcomment cmt">Creates processor-specific replay parameters for snapshotted replay if <code>snapshot</code> is
+<code>true</code>, for non-snapshotted replay otherwise.</p><div class="fullcomment"><div class="comment cmt"><p>Creates processor-specific replay parameters for snapshotted replay if <code>snapshot</code> is
+<code>true</code>, for non-snapshotted replay otherwise. There is an upper sequence number bound.
+</p></div></div>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="apply(processorId:Int,snapshot:Boolean):org.eligosource.eventsourced.core.ReplayParams"></a>
+      <a id="apply(Int,Boolean):ReplayParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="snapshot">snapshot: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates processor-specific replay parameters for snapshotted replay if <code>snapshot</code> is
+<code>true</code>, for non-snapshotted replay otherwise.</p><div class="fullcomment"><div class="comment cmt"><p>Creates processor-specific replay parameters for snapshotted replay if <code>snapshot</code> is
+<code>true</code>, for non-snapshotted replay otherwise. There are no lower and upper sequence
+number bounds.
+</p></div></div>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(processorId:Int,snapshotFilter:org.eligosource.eventsourced.core.SnapshotMetadata=&gt;Boolean,toSequenceNr:Long):org.eligosource.eventsourced.core.ReplayParams"></a>
+      <a id="apply(Int,(SnapshotMetadata)⇒Boolean,Long):ReplayParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="snapshotFilter">snapshotFilter: (<a href="SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>, <span name="toSequenceNr">toSequenceNr: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates processor-specific replay parameters for snapshotted replay with an upper
+sequence number bound.</p>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(processorId:Int,snapshotFilter:org.eligosource.eventsourced.core.SnapshotMetadata=&gt;Boolean):org.eligosource.eventsourced.core.ReplayParams"></a>
+      <a id="apply(Int,(SnapshotMetadata)⇒Boolean):ReplayParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="snapshotFilter">snapshotFilter: (<a href="SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates processor-specific replay parameters for snapshotted replay with no upper
+sequence number bound.</p>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams#apply" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="apply(processorId:Int,fromSequenceNr:Long,toSequenceNr:Long):org.eligosource.eventsourced.core.ReplayParams"></a>
+      <a id="apply(Int,Long,Long):ReplayParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">apply</span><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="fromSequenceNr">fromSequenceNr: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">0L</span></span>, <span name="toSequenceNr">toSequenceNr: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">Long.MaxValue</span></span>)</span><span class="result">: <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Creates processor-specific replay parameters for non-snapshotted replay with optional
+lower and upper sequence number bounds.</p>
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -198,19 +289,6 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.core.Serialization#createExtension" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="createExtension(system:akka.actor.ExtendedActorSystem):org.eligosource.eventsourced.core.Serialization"></a>
-      <a id="createExtension(ExtendedActorSystem):Serialization"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">createExtension</span><span class="params">(<span name="system">system: <span class="extype" name="akka.actor.ExtendedActorSystem">ExtendedActorSystem</span></span>)</span><span class="result">: <a href="Serialization.html" class="extype" name="org.eligosource.eventsourced.core.Serialization">Serialization</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.core.Serialization">Serialization</a> → ExtensionId</dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -253,19 +331,6 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="akka.actor.ExtensionId#get" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="get(system:&lt;?&gt;):T"></a>
-      <a id="get(ActorSystem):Serialization"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">get</span><span class="params">(<span name="system">system: <span class="extype" name="akka.actor.ActorSystem">ActorSystem</span></span>)</span><span class="result">: <a href="Serialization.html" class="extype" name="org.eligosource.eventsourced.core.Serialization">Serialization</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>ExtensionId</dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -305,19 +370,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.core.Serialization#lookup" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="lookup():org.eligosource.eventsourced.core.Serialization.type"></a>
-      <a id="lookup():Serialization.type"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">lookup</span><span class="params">()</span><span class="result">: <a href="" class="extype" name="org.eligosource.eventsourced.core.Serialization">Serialization</a>.type</span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.core.Serialization">Serialization</a> → ExtensionIdProvider</dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -440,11 +492,7 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="akka.actor.ExtensionIdProvider">
-              <h3>Inherited from <span class="extype" name="akka.actor.ExtensionIdProvider">ExtensionIdProvider</span></h3>
-            </div><div class="parent" name="akka.actor.ExtensionId">
-              <h3>Inherited from <span class="extype" name="akka.actor.ExtensionId">ExtensionId</span>[<a href="Serialization.html" class="extype" name="org.eligosource.eventsourced.core.Serialization">Serialization</a>]</h3>
-            </div><div class="parent" name="scala.AnyRef">
+        <div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>

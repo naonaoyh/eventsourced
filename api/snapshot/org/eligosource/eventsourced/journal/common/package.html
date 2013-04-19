@@ -99,6 +99,99 @@
       </span>
       </h4>
       
+    </li><li name="org.eligosource.eventsourced.journal.common.CommandSerialization" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CommandSerializationextendsMessageSerialization"></a>
+      <a id="CommandSerialization:CommandSerialization"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="CommandSerialization.html"><span class="name">CommandSerialization</span></a><span class="result"> extends <a href="MessageSerialization.html" class="extype" name="org.eligosource.eventsourced.journal.common.MessageSerialization">MessageSerialization</a></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Extension for protobuf-based (de)serialization of journal commands.</p>
+    </li><li name="org.eligosource.eventsourced.journal.common.JournalProtocol" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="JournalProtocolextendsObject"></a>
+      <a id="JournalProtocol:JournalProtocol"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="JournalProtocol.html"><span class="name">JournalProtocol</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.common.MessageSerialization" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MessageSerializationextendsExtension"></a>
+      <a id="MessageSerialization:MessageSerialization"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MessageSerialization.html"><span class="name">MessageSerialization</span></a><span class="result"> extends <span class="extype" name="akka.actor.Extension">Extension</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Extension for protobuf-based (de)serialization of event messages.</p>
+    </li><li name="org.eligosource.eventsourced.journal.common.MessageSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MessageSerializerextendsSerializer"></a>
+      <a id="MessageSerializer:MessageSerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a href="MessageSerializer.html"><span class="name">MessageSerializer</span></a><span class="result"> extends <span class="extype" name="akka.serialization.Serializer">Serializer</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Protobuf-based <a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">org.eligosource.eventsourced.core.Message</a> serializer that uses
+the Akka <span class="extype" name="akka.serialization.Serialization">akka.serialization.Serialization</span> extension to find a serializer for
+an event contained in an event message.</p>
+    </li><li name="org.eligosource.eventsourced.journal.common.SnapshotAccess" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SnapshotAccessextendsAnyRef"></a>
+      <a id="SnapshotAccess:SnapshotAccess"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SnapshotAccess.html"><span class="name">SnapshotAccess</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Input and output stream management for snapshot IO.</p>
+    </li><li name="org.eligosource.eventsourced.journal.common.SnapshotSerialization" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SnapshotSerializationextendsAnyRef"></a>
+      <a id="SnapshotSerialization:SnapshotSerialization"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SnapshotSerialization.html"><span class="name">SnapshotSerialization</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Snapshot (de)serialization utility.</p>
+    </li><li name="org.eligosource.eventsourced.journal.common.SnapshotSerializer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SnapshotSerializerextendsAnyRef"></a>
+      <a id="SnapshotSerializer:SnapshotSerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SnapshotSerializer.html"><span class="name">SnapshotSerializer</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Snapshot serializer.</p>
     </li><li name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="SynchronousWriteReplaySupportextendsActor"></a>
       <a id="SynchronousWriteReplaySupport:SynchronousWriteReplaySupport"></a>
@@ -129,6 +222,45 @@
       </span>
       <span class="symbol">
         <a href="AsynchronousWriteReplaySupport$.html"><span class="name">AsynchronousWriteReplaySupport</span></a>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.common.CommandSerialization" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CommandSerialization"></a>
+      <a id="CommandSerialization:CommandSerialization"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="CommandSerialization$.html"><span class="name">CommandSerialization</span></a><span class="result"> extends <span class="extype" name="akka.actor.ExtensionId">ExtensionId</span>[<a href="CommandSerialization.html" class="extype" name="org.eligosource.eventsourced.journal.common.CommandSerialization">CommandSerialization</a>] with <span class="extype" name="akka.actor.ExtensionIdProvider">ExtensionIdProvider</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.common.MessageSerialization" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MessageSerialization"></a>
+      <a id="MessageSerialization:MessageSerialization"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MessageSerialization$.html"><span class="name">MessageSerialization</span></a><span class="result"> extends <span class="extype" name="akka.actor.ExtensionId">ExtensionId</span>[<a href="MessageSerialization.html" class="extype" name="org.eligosource.eventsourced.journal.common.MessageSerialization">MessageSerialization</a>] with <span class="extype" name="akka.actor.ExtensionIdProvider">ExtensionIdProvider</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.common.SnapshotSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SnapshotSerializer"></a>
+      <a id="SnapshotSerializer:SnapshotSerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SnapshotSerializer$.html"><span class="name">SnapshotSerializer</span></a>
       </span>
       </h4>
       

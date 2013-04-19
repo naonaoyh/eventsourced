@@ -2,22 +2,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>SnapshottedReplay - org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.SnapshottedReplay</title>
-          <meta name="description" content="SnapshottedReplay - org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.SnapshottedReplay" />
-          <meta name="keywords" content="SnapshottedReplay org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.SnapshottedReplay" />
+          <title>SnapshotReplayParams - org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams</title>
+          <meta name="description" content="SnapshotReplayParams - org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams" />
+          <meta name="keywords" content="SnapshotReplayParams org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
-      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
-      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
-      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
       
       <script type="text/javascript">
          if(top === self) {
-            var url = '../../../../../index.html';
-            var hash = 'org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport$$SnapshottedReplay';
+            var url = '../../../../index.html';
+            var hash = 'org.eligosource.eventsourced.core.ReplayParams$$SnapshotReplayParams';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -29,9 +29,9 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../../../lib/class_big.png" />
-        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.journal">journal</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.journal.common">common</a>.<a href="AsynchronousWriteReplaySupport$.html" class="extype" name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport">AsynchronousWriteReplaySupport</a></p>
-        <h1>SnapshottedReplay</h1>
+        <img src="../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.core">core</a>.<a href="ReplayParams$.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></p>
+        <h1>SnapshotReplayParams</h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -40,13 +40,16 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">SnapshottedReplay</span><span class="params">(<span name="replayCmd">replayCmd: <span class="extype" name="scala.Any">Any</span></span>, <span name="toSequencerNr">toSequencerNr: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">SnapshotReplayParams</span><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="snapshotBaseFilter">snapshotBaseFilter: (<a href="SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span> = <span class="defval" name="((x$2: org.eligosource.eventsourced.core.SnapshotMetadata) =&gt; true)">...</span></span>, <span name="toSequenceNr">toSequenceNr: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">scala.Long.MaxValue</span></span>)</span><span class="result"> extends <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Processor-specific replay parameters for snapshotted replay.
+</p></div><dl class="paramcmts block"><dt class="param">snapshotBaseFilter</dt><dd class="cmt"><p>application defined snapshot filter.
+       Selects any saved snapshot by default.
+</p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -64,7 +67,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.SnapshottedReplay"><span>SnapshottedReplay</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams"><span>SnapshotReplayParams</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="org.eligosource.eventsourced.core.ReplayParams"><span>ReplayParams</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -84,19 +87,21 @@
         <div id="allMembers">
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
-              <ol><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.SnapshottedReplay#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(replayCmd:Any,toSequencerNr:Long):org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.SnapshottedReplay"></a>
-      <a id="&lt;init&gt;:SnapshottedReplay"></a>
+              <ol><li name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="&lt;init&gt;(processorId:Int,snapshotBaseFilter:org.eligosource.eventsourced.core.SnapshotMetadata=&gt;Boolean,toSequenceNr:Long):org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams"></a>
+      <a id="&lt;init&gt;:SnapshotReplayParams"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">SnapshottedReplay</span><span class="params">(<span name="replayCmd">replayCmd: <span class="extype" name="scala.Any">Any</span></span>, <span name="toSequencerNr">toSequencerNr: <span class="extype" name="scala.Long">Long</span></span>)</span>
+        <span class="name">SnapshotReplayParams</span><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="snapshotBaseFilter">snapshotBaseFilter: (<a href="SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span> = <span class="defval" name="((x$2: org.eligosource.eventsourced.core.SnapshotMetadata) =&gt; true)">...</span></span>, <span name="toSequenceNr">toSequenceNr: <span class="extype" name="scala.Long">Long</span> = <span class="symbol">scala.Long.MaxValue</span></span>)</span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">snapshotBaseFilter</dt><dd class="cmt"><p>application defined snapshot filter.
+       Selects any saved snapshot by default.
+</p></dd></dl></div>
     </li></ol>
             </div>
 
@@ -196,7 +201,7 @@
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -225,10 +230,24 @@
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams#fromSequenceNr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="fromSequenceNr:Long"></a>
+      <a id="fromSequenceNr:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">fromSequenceNr</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns <code>0L</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns <code>0L</code>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams">SnapshotReplayParams</a> → <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></dd></dl></div>
     </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="getClass():Class[_]"></a>
       <a id="getClass():Class[_]"></a>
@@ -294,19 +313,65 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.SnapshottedReplay#replayCmd" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="replayCmd:Any"></a>
-      <a id="replayCmd:Any"></a>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams#processorId" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="processorId:Int"></a>
+      <a id="processorId:Int"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">replayCmd</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
+        <span class="name">processorId</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Processor id.</p><div class="fullcomment"><div class="comment cmt"><p>Processor id.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams">SnapshotReplayParams</a> → <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams#snapshot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="snapshot:Boolean"></a>
+      <a id="snapshot:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">snapshot</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Return <code>true</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Return <code>true</code>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams">SnapshotReplayParams</a> → <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams#snapshotBaseFilter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="snapshotBaseFilter:org.eligosource.eventsourced.core.SnapshotMetadata=&gt;Boolean"></a>
+      <a id="snapshotBaseFilter:(SnapshotMetadata)⇒Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">snapshotBaseFilter</span><span class="result">: (<a href="SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">application defined snapshot filter.</p><div class="fullcomment"><div class="comment cmt"><p>application defined snapshot filter.
+       Selects any saved snapshot by default.
+</p></div></div>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams#snapshotFilter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="snapshotFilter:org.eligosource.eventsourced.core.SnapshotMetadata=&gt;Boolean"></a>
+      <a id="snapshotFilter:(SnapshotMetadata)⇒Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">snapshotFilter</span><span class="result">: (<a href="SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Snapshot filter that applies <code>snapshotBaseFilter</code> an and a
+<code>&lt;= toSequenceNr</code> constraint.</p><div class="fullcomment"><div class="comment cmt"><p>Snapshot filter that applies <code>snapshotBaseFilter</code> an and a
+<code>&lt;= toSequenceNr</code> constraint.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams">SnapshotReplayParams</a> → <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -320,19 +385,21 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.SnapshottedReplay#toSequencerNr" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="toSequencerNr:Long"></a>
-      <a id="toSequencerNr:Long"></a>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams#toSequenceNr" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toSequenceNr:Long"></a>
+      <a id="toSequenceNr:Long"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">val</span>
       </span>
       <span class="symbol">
-        <span class="name">toSequencerNr</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+        <span class="name">toSequenceNr</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
       </span>
       </h4>
-      
+      <p class="shortcomment cmt">Upper sequence number bound.</p><div class="fullcomment"><div class="comment cmt"><p>Upper sequence number bound. Sequence number a replay should end (inclusive). Applicable
+to both, snapshotted and non-snapshotted replays.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.core.ReplayParams.SnapshotReplayParams">SnapshotReplayParams</a> → <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -398,6 +465,8 @@
               <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
             </div><div class="parent" name="scala.Equals">
               <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
+            </div><div class="parent" name="org.eligosource.eventsourced.core.ReplayParams">
+              <h3>Inherited from <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

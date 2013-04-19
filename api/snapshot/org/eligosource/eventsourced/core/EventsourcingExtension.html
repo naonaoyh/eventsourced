@@ -47,7 +47,7 @@
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Event-sourcing extension for Akka. Used by applications to create and register
 <a href="Eventsourced.html" class="extype" name="org.eligosource.eventsourced.core.Eventsourced">org.eligosource.eventsourced.core.Eventsourced</a> processors and event message
 <a href="Channel.html" class="extype" name="org.eligosource.eventsourced.core.Channel">org.eligosource.eventsourced.core.Channel</a>s and to recover them from journaled
-event <a href="Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">org.eligosource.eventsourced.core.Message</a>s.
+event <a href="Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">org.eligosource.eventsourced.core.Message</a>s and, optionally, snapshots.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="akka.actor.Extension">Extension</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -288,7 +288,7 @@ processing all pending messages in their mailboxes.
         <span class="name">deliver</span><span class="params">(<span name="channels">channels: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="timeout">timeout: <span class="extype" name="akka.util.Timeout">Timeout</span></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.Any">Any</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Enables the specified channels and starts delivery of pending messages.</p>
+      <p class="shortcomment cmt">Activates the specified channels and starts delivery of pending messages.</p>
     </li><li name="org.eligosource.eventsourced.core.EventsourcingExtension#deliver" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="deliver(channelId:Int)(implicittimeout:akka.util.Timeout):scala.concurrent.Future[Any]"></a>
       <a id="deliver(Int)(Timeout):Future[Any]"></a>
@@ -301,7 +301,7 @@ processing all pending messages in their mailboxes.
         <span class="name">deliver</span><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="timeout">timeout: <span class="extype" name="akka.util.Timeout">Timeout</span></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.Any">Any</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Enables the channel registered under <code>channelId</code> and starts delivery of pending messages.</p>
+      <p class="shortcomment cmt">Activates the channel registered under <code>channelId</code> and starts delivery of pending messages.</p>
     </li><li name="org.eligosource.eventsourced.core.EventsourcingExtension#deliver" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="deliver()(implicittimeout:akka.util.Timeout):scala.concurrent.Future[Any]"></a>
       <a id="deliver()(Timeout):Future[Any]"></a>
@@ -314,7 +314,7 @@ processing all pending messages in their mailboxes.
         <span class="name">deliver</span><span class="params">()</span><span class="params">(<span class="implicit">implicit </span><span name="timeout">timeout: <span class="extype" name="akka.util.Timeout">Timeout</span></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.Any">Any</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Enables all registered channels and starts delivery of pending messages.</p>
+      <p class="shortcomment cmt">Activates all registered channels and starts delivery of pending messages.</p>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -515,27 +515,42 @@ blocking.
 Mapping key is the processor id.
 </p></div></div>
     </li><li name="org.eligosource.eventsourced.core.EventsourcingExtension#recover" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="recover(f:Int=&gt;Option[Long],waitAtMost:scala.concurrent.duration.FiniteDuration):Unit"></a>
-      <a id="recover((Int)⇒Option[Long],FiniteDuration):Unit"></a>
+      <a id="recover(params:Seq[org.eligosource.eventsourced.core.ReplayParams],waitAtMost:scala.concurrent.duration.FiniteDuration):Unit"></a>
+      <a id="recover(Seq[ReplayParams],FiniteDuration):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">recover</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Int">Int</span>) ⇒ <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="waitAtMost">waitAtMost: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+        <span class="name">recover</span><span class="params">(<span name="params">params: <span class="extype" name="scala.Seq">Seq</span>[<a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a>]</span>, <span name="waitAtMost">waitAtMost: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Recovers selected processors and all channels registered at this extension by
-sequentially executing <code>replay(f)</code> and then <code>deliver()</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Recovers selected processors and all channels registered at this extension by
-sequentially executing <code>replay(f)</code> and then <code>deliver()</code>.</p><p>This method waits for replayed messages being added to processor mailboxes but
-does not wait for replayed input messages being processed. However, any new message
-sent to any of the selected processors, after this method successfully returned,
-will be processed after the replayed event messages.</p><p>Clients that want to wait for replayed messages being processed should call the
+      <p class="shortcomment cmt">Recovers specified processors and all channels registered at this extension where</p><div class="fullcomment"><div class="comment cmt"><p>Recovers specified processors and all channels registered at this extension where</p><ul><li>processor recovery is done by calling <code>replay(params)</code></li><li>channel activation is done by calling <code>deliver()</code></li></ul><p>Channel activation is only started after processor recovery successfully completed.</p><p>This method waits for replayed messages being sent to specified processors (via <code>!</code>)
+and all channels being activated but does not wait for replayed input messages being
+processed. However, any new message sent to any of the specified processors, after
+this method successfully returned, will be processed after the replayed event messages.</p><p>Clients that want to wait for replayed messages being processed should call the
 <code>awaitProcessing</code> method after this method successfully returned.
-</p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>function called for each processor id. If the function returns <code>None</code>
-       no message replay will be done for that processor. If it returns <code>Some(snr)</code>
-       message replay will start from sequence number <code>snr</code> for that processor.</p></dd><dt class="param">waitAtMost</dt><dd class="cmt"><p>wait for the specified duration for the replay to complete.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">TimeoutException<p>if replay doesn't complete within the specified duration.
+</p></div><dl class="paramcmts block"><dt class="param">params</dt><dd class="cmt"><p>replay parameters passed to <code>replay(params)</code>.</p></dd><dt class="param">waitAtMost</dt><dd class="cmt"><p>wait for the specified duration for the replay to complete.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">TimeoutException<p>if replay doesn't complete within the specified duration.
+</p></span></dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.core.EventsourcingExtension#recover" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="recover(params:Seq[org.eligosource.eventsourced.core.ReplayParams]):Unit"></a>
+      <a id="recover(Seq[ReplayParams]):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">recover</span><span class="params">(<span name="params">params: <span class="extype" name="scala.Seq">Seq</span>[<a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Recovers specified processors and all channels registered at this extension where</p><div class="fullcomment"><div class="comment cmt"><p>Recovers specified processors and all channels registered at this extension where</p><ul><li>processor recovery is done by calling <code>replay(params)</code></li><li>channel activation is done by calling <code>deliver()</code></li></ul><p>Channel activation is only started after processor recovery successfully completed.</p><p>This method waits for replayed messages being sent to specified processors (via <code>!</code>)
+and all channels being activated but does not wait for replayed input messages being
+processed. However, any new message sent to any of the specified processors, after
+this method successfully returned, will be processed after the replayed event messages.</p><p>Clients that want to wait for replayed messages being processed should call the
+<code>awaitProcessing</code> method after this method successfully returned.
+</p></div><dl class="paramcmts block"><dt class="param">params</dt><dd class="cmt"><p>replay parameters passed to <code>replay(params)</code>.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">TimeoutException<p>if replay doesn't complete within 1 minute.
 </p></span></dd></dl></div>
     </li><li name="org.eligosource.eventsourced.core.EventsourcingExtension#recover" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="recover(waitAtMost:scala.concurrent.duration.FiniteDuration):Unit"></a>
@@ -549,37 +564,67 @@ will be processed after the replayed event messages.</p><p>Clients that want to 
         <span class="name">recover</span><span class="params">(<span name="waitAtMost">waitAtMost: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="symbol">1 minute</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Recovers all processors and channels registered at this extension by
-sequentially executing <code>replay(_ =&gt; Some(0))</code> and then <code>deliver()</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Recovers all processors and channels registered at this extension by
-sequentially executing <code>replay(_ =&gt; Some(0))</code> and then <code>deliver()</code>.
-Replay is done with no lower bound (i.e. with all messages in the journal).</p><p>This method waits for replayed messages being added to processor mailboxes but
-does not wait for replayed input messages being processed. However, any new message
-sent to any of the selected processors, after this method successfully returned,
-will be processed after the replayed event messages.</p><p>Clients that want to wait for replayed messages being processed should call the
+      <p class="shortcomment cmt">Recovers all processors and all channels registered at this extension where</p><div class="fullcomment"><div class="comment cmt"><p>Recovers all processors and all channels registered at this extension where</p><ul><li>processor recovery is done by calling <code>replay(params)</code></li><li>channel activation is done by calling <code>deliver()</code></li></ul><p>Channel activation is only started after processor recovery successfully completed.</p><p>This method waits for replayed messages being sent to all processors (via <code>!</code>)
+and all channels being activated but does not wait for replayed input messages being
+processed. However, any new message sent to any of the processors, after this method
+successfully returned, will be processed after the replayed event messages.</p><p>Clients that want to wait for replayed messages being processed should call the
 <code>awaitProcessing</code> method after this method successfully returned.
-</p></div><dl class="paramcmts block"><dt class="param">waitAtMost</dt><dd class="cmt"><p>wait for the specified duration for the replay to complete.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">TimeoutException<p>if replay doesn't complete within the specified duration.
+</p></div><dl class="paramcmts block"><dt class="param">waitAtMost</dt><dd class="cmt"><p>wait for the specified duration for the replay to complete.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">TimeoutException<p>if replay doesn't complete within the specified duration (which
+        defaults to 1 minute).
 </p></span></dd></dl></div>
     </li><li name="org.eligosource.eventsourced.core.EventsourcingExtension#replay" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="replay(f:Int=&gt;Option[Long])(implicittimeout:akka.util.Timeout):scala.concurrent.Future[Any]"></a>
-      <a id="replay((Int)⇒Option[Long])(Timeout):Future[Any]"></a>
+      <a id="replay(params:Seq[org.eligosource.eventsourced.core.ReplayParams])(implicittimeout:akka.util.Timeout):scala.concurrent.Future[Any]"></a>
+      <a id="replay(Seq[ReplayParams])(Timeout):Future[Any]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">replay</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Int">Int</span>) ⇒ <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="timeout">timeout: <span class="extype" name="akka.util.Timeout">Timeout</span></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.Any">Any</span>]</span>
+        <span class="name">replay</span><span class="params">(<span name="params">params: <span class="extype" name="scala.Seq">Seq</span>[<a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="timeout">timeout: <span class="extype" name="akka.util.Timeout">Timeout</span></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.Any">Any</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Replays input messages to selected processors.</p><div class="fullcomment"><div class="comment cmt"><p>Replays input messages to selected processors. The returned <code>Future</code> will be
-completed when the replayed messages have been added to the selected processor's
-mailboxes. Any new message sent to any of the selected processors, after successful
-completion of the returned <code>Future</code>, will be processed after the replayed input
-messages.</p><p>Clients that want to wait for replayed messages being processed should call the
+      <p class="shortcomment cmt">Replays input messages to specified processors, optionally based on a snapshot.</p><div class="fullcomment"><div class="comment cmt"><p>Replays input messages to specified processors, optionally based on a snapshot.
+The returned <code>Future</code> will be completed when the replayed messages have been
+sent (via <code>!</code>) to the specified processors. Any new message sent to any of the
+specified processors, after successful completion of the returned <code>Future</code>, will
+be processed after the replayed input messages.</p><p>Clients that want to wait for replayed messages being processed should call the
 <code>awaitProcessing</code> method after the returned <code>Future</code> successfully completed.
-</p></div><dl class="paramcmts block"><dt class="param">f</dt><dd class="cmt"><p>function called for each processor id. If the function returns <code>None</code>
-       no message replay will be done for that processor. If it returns <code>Some(snr)</code>
-       message replay will start from sequence number <code>snr</code> for that processor.
+</p></div><dl class="paramcmts block"><dt class="param">params</dt><dd class="cmt"><p>sequence of processor-specific replay parameters.</p></dd></dl><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">org.eligosource.eventsourced.core.ReplayParams</a>
+</p></span></dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.core.EventsourcingExtension.replayParams" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="replayParams"></a>
+      <a id="replayParams:replayParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="EventsourcingExtension$replayParams$.html"><span class="name">replayParams</span></a>
+      </span>
+      </h4>
+      <p class="comment cmt">Predefined <code>ReplayParams</code> sequences to be used with methods <code>replay</code> or <code>recover</code>.</p>
+    </li><li name="org.eligosource.eventsourced.core.EventsourcingExtension#snapshot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="snapshot(processorIds:Set[Int])(implicittimeout:akka.util.Timeout):scala.concurrent.Future[Set[org.eligosource.eventsourced.core.SnapshotSaved]]"></a>
+      <a id="snapshot(Set[Int])(Timeout):Future[Set[SnapshotSaved]]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">snapshot</span><span class="params">(<span name="processorIds">processorIds: <span class="extype" name="scala.Predef.Set">Set</span>[<span class="extype" name="scala.Int">Int</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="timeout">timeout: <span class="extype" name="akka.util.Timeout">Timeout</span></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.Predef.Set">Set</span>[<a href="SnapshotSaved.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotSaved">SnapshotSaved</a>]]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Requests a snapshot capturing action from specified processors.</p><div class="fullcomment"><div class="comment cmt"><p>Requests a snapshot capturing action from specified processors. These processors
+will receive a <a href="SnapshotRequest.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotRequest">org.eligosource.eventsourced.core.SnapshotRequest</a> message which
+is used to capture a snapshot via that message's <code>process</code> method. Once captured,
+the snapshots will be saved. The future returned by this method will be completed,
+when all snapshots have been saved.</p><p>Calling this method for a single processor is equivalent to sending that
+processor a <a href="SnapshotRequest$.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotRequest">org.eligosource.eventsourced.core.SnapshotRequest$</a> message.
+</p></div><dl class="paramcmts block"><dt class="param">processorIds</dt><dd class="cmt"><p>ids of processors for which a snapshot capturing action
+       shall be requested.</p></dd><dt class="param">timeout</dt><dd class="cmt"><p>snapshot capturing and saving timeout.
 </p></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
@@ -660,7 +705,42 @@ messages.</p><p>Clients that want to wait for replayed messages being processed 
 
         
 
-        
+        <div id="values" class="values members">
+              <h3>Deprecated Value Members</h3>
+              <ol><li name="org.eligosource.eventsourced.core.EventsourcingExtension#recover" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="recover(f:Int=&gt;Option[Long],waitAtMost:scala.concurrent.duration.FiniteDuration):Unit"></a>
+      <a id="recover((Int)⇒Option[Long],FiniteDuration):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 0.5) use recover(Seq[ReplayParams], FiniteDuration)">recover</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Int">Int</span>) ⇒ <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>]</span>, <span name="waitAtMost">waitAtMost: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.5)</i> use recover(Seq[ReplayParams], FiniteDuration)</p></dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.core.EventsourcingExtension#replay" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="replay(f:Int=&gt;Option[Long])(implicittimeout:akka.util.Timeout):scala.concurrent.Future[Any]"></a>
+      <a id="replay((Int)⇒Option[Long])(Timeout):Future[Any]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name deprecated" title="Deprecated: (Since version 0.5) use replay(Seq[ReplayParams])(Timeout)">replay</span><span class="params">(<span name="f">f: (<span class="extype" name="scala.Int">Int</span>) ⇒ <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Long">Long</span>]</span>)</span><span class="params">(<span class="implicit">implicit </span><span name="timeout">timeout: <span class="extype" name="akka.util.Timeout">Timeout</span></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.Any">Any</span>]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@deprecated</span>
+              
+        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.5)</i> use replay(Seq[ReplayParams])(Timeout)</p></dd></dl></div>
+    </li></ol>
+            </div>
         </div>
 
         <div id="inheritedMembers">

@@ -225,19 +225,6 @@ to <code>destination</code>.</p>
       </span>
       </h4>
       <p class="comment cmt">Journal configuration object.</p>
-    </li><li name="org.eligosource.eventsourced.core.JournalProtocol" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="JournalProtocolextendsObject"></a>
-      <a id="JournalProtocol:JournalProtocol"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">final </span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="JournalProtocol.html"><span class="name">JournalProtocol</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
-      </span>
-      </h4>
-      
     </li><li name="org.eligosource.eventsourced.core.Message" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="MessageextendsProductwithSerializable"></a>
       <a id="Message:Message"></a>
@@ -279,21 +266,6 @@ to a <a href="Channel.html" class="extype" name="org.eligosource.eventsourced.co
       </h4>
       <p class="comment cmt">Factory for creating <a href="MessageEmitter.html" class="extype" name="org.eligosource.eventsourced.core.MessageEmitter">org.eligosource.eventsourced.core.MessageEmitter</a>s
 for a certain <a href="Channel.html" class="extype" name="org.eligosource.eventsourced.core.Channel">org.eligosource.eventsourced.core.Channel</a>.</p>
-    </li><li name="org.eligosource.eventsourced.core.MessageSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="MessageSerializerextendsSerializer"></a>
-      <a id="MessageSerializer:MessageSerializer"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="MessageSerializer.html"><span class="name">MessageSerializer</span></a><span class="result"> extends <span class="extype" name="akka.serialization.Serializer">Serializer</span></span>
-      </span>
-      </h4>
-      <p class="comment cmt">Protobuf-based <a href="Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">org.eligosource.eventsourced.core.Message</a> serializer that uses
-the Akka <span class="extype" name="akka.serialization.Serialization">akka.serialization.Serialization</span> extension to find a serializer for
-an event contained in an event message.</p>
     </li><li name="org.eligosource.eventsourced.core.Multicast" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="MulticastextendsActor"></a>
       <a id="Multicast:Multicast"></a>
@@ -377,6 +349,19 @@ actor's <code>receive</code> method with that <code>event</code>.</p>
       </span>
       </h4>
       <p class="comment cmt"><a href="ReliableChannel.html" class="extype" name="org.eligosource.eventsourced.core.ReliableChannel">org.eligosource.eventsourced.core.ReliableChannel</a> configuration object.</p>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="ReplayParamsextendsAnyRef"></a>
+      <a id="ReplayParams:ReplayParams"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="ReplayParams.html"><span class="name">ReplayParams</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Processor-specific replay parameters.</p>
     </li><li name="org.eligosource.eventsourced.core.Sequencer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="SequencerextendsActor"></a>
       <a id="Sequencer:Sequencer"></a>
@@ -390,20 +375,85 @@ actor's <code>receive</code> method with that <code>event</code>.</p>
       </span>
       </h4>
       <p class="comment cmt">Stackable modification for actors that need to receive a re-sequenced message stream.</p>
-    </li><li name="org.eligosource.eventsourced.core.Serialization" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="SerializationextendsExtension"></a>
-      <a id="Serialization:Serialization"></a>
+    </li><li name="org.eligosource.eventsourced.core.Snapshot" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SnapshotextendsSnapshotMetadatawithProductwithSerializable"></a>
+      <a id="Snapshot:Snapshot"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Snapshot.html"><span class="name">Snapshot</span></a><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="sequenceNr">sequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="timestamp">timestamp: <span class="extype" name="scala.Long">Long</span></span>, <span name="state">state: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result"> extends <a href="SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Snapshot of processor state.</p>
+    </li><li name="org.eligosource.eventsourced.core.SnapshotMetadata" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SnapshotMetadataextendsAnyRef"></a>
+      <a id="SnapshotMetadata:SnapshotMetadata"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SnapshotMetadata.html"><span class="name">SnapshotMetadata</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Snapshot metadata.</p>
+    </li><li name="org.eligosource.eventsourced.core.SnapshotNotSupportedException" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SnapshotNotSupportedExceptionextendsRuntimeExceptionwithSerializable"></a>
+      <a id="SnapshotNotSupportedException:SnapshotNotSupportedException"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="Serialization.html"><span class="name">Serialization</span></a><span class="result"> extends <span class="extype" name="akka.actor.Extension">Extension</span></span>
+        <a href="SnapshotNotSupportedException.html"><span class="name">SnapshotNotSupportedException</span></a><span class="result"> extends <span class="extype" name="scala.RuntimeException">RuntimeException</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
-      <p class="comment cmt">Extension for protobuf-based (de)serialization of event messages and journal
-commands.</p>
+      <p class="comment cmt">Failure reply to a snapshot capturing request.</p>
+    </li><li name="org.eligosource.eventsourced.core.SnapshotOffer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SnapshotOfferextendsProductwithSerializable"></a>
+      <a id="SnapshotOffer:SnapshotOffer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SnapshotOffer.html"><span class="name">SnapshotOffer</span></a><span class="params">(<span name="snapshot">snapshot: <a href="Snapshot.html" class="extype" name="org.eligosource.eventsourced.core.Snapshot">Snapshot</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Offers a snapshot to a processor during replay.</p>
+    </li><li name="org.eligosource.eventsourced.core.SnapshotRequest" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SnapshotRequestextendsProductwithSerializable"></a>
+      <a id="SnapshotRequest:SnapshotRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SnapshotRequest.html"><span class="name">SnapshotRequest</span></a><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="sequenceNr">sequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="requestor">requestor: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Requests a snapshot capturing action from an <a href="Eventsourced.html" class="extype" name="org.eligosource.eventsourced.core.Eventsourced">org.eligosource.eventsourced.core.Eventsourced</a>
+processor.</p>
+    </li><li name="org.eligosource.eventsourced.core.SnapshotSaved" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SnapshotSavedextendsSnapshotMetadatawithProductwithSerializable"></a>
+      <a id="SnapshotSaved:SnapshotSaved"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="SnapshotSaved.html"><span class="name">SnapshotSaved</span></a><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="sequenceNr">sequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="timestamp">timestamp: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result"> extends <a href="SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Success reply to a snapshot capturing request.</p>
     </li></ol>
             </div>
 
@@ -436,7 +486,7 @@ commands.</p>
         <a href="EventsourcingExtension$.html"><span class="name">EventsourcingExtension</span></a><span class="result"> extends <span class="extype" name="akka.actor.ExtensionId">ExtensionId</span>[<a href="EventsourcingExtension.html" class="extype" name="org.eligosource.eventsourced.core.EventsourcingExtension">EventsourcingExtension</a>] with <span class="extype" name="akka.actor.ExtensionIdProvider">ExtensionIdProvider</span></span>
       </span>
       </h4>
-      <p class="comment cmt">Event-sourcing extension access point.</p>
+      
     </li><li name="org.eligosource.eventsourced.core.Journal" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="Journal"></a>
       <a id="Journal:Journal"></a>
@@ -463,19 +513,32 @@ commands.</p>
       </span>
       </h4>
       
-    </li><li name="org.eligosource.eventsourced.core.Serialization" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="Serialization"></a>
-      <a id="Serialization:Serialization"></a>
+    </li><li name="org.eligosource.eventsourced.core.ReplayParams" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReplayParams"></a>
+      <a id="ReplayParams:ReplayParams"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">object</span>
       </span>
       <span class="symbol">
-        <a href="Serialization$.html"><span class="name">Serialization</span></a><span class="result"> extends <span class="extype" name="akka.actor.ExtensionId">ExtensionId</span>[<a href="Serialization.html" class="extype" name="org.eligosource.eventsourced.core.Serialization">Serialization</a>] with <span class="extype" name="akka.actor.ExtensionIdProvider">ExtensionIdProvider</span></span>
+        <a href="ReplayParams$.html"><span class="name">ReplayParams</span></a>
       </span>
       </h4>
-      <p class="comment cmt">Serialization extension access point.</p>
+      <p class="comment cmt"></p>
+    </li><li name="org.eligosource.eventsourced.core.SnapshotRequest" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SnapshotRequest"></a>
+      <a id="SnapshotRequest:SnapshotRequest"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="SnapshotRequest$.html"><span class="name">SnapshotRequest</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Command for requesting a snapshot capturing action from a processor.</p>
     </li><li name="org.eligosource.eventsourced.core.package#actor" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="actor(actor:=&gt;akka.actor.Actor,name:Option[String],dispatcherName:Option[String])(implicitactorRefFactory:akka.actor.ActorRefFactory):akka.actor.ActorRef"></a>
       <a id="actor(⇒Actor,Option[String],Option[String])(ActorRefFactory):ActorRef"></a>

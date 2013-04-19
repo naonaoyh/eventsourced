@@ -116,10 +116,7 @@
         <span class="name">executeBatchReplayInMsgs</span><span class="params">(<span name="cmds">cmds: <span class="extype" name="scala.Seq">Seq</span>[<a href="../../core/Journal$$ReplayInMsgs.html" class="extype" name="org.eligosource.eventsourced.core.Journal.ReplayInMsgs">ReplayInMsgs</a>]</span>, <span name="p">p: (<a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">Message</a>, <span class="extype" name="akka.actor.ActorRef">ActorRef</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Instructs a journal provider to batch-replay input messages.</p><div class="fullcomment"><div class="comment cmt"><p>Instructs a journal provider to batch-replay input messages. The provider must
-reply to the sender with <a href="../../core/Journal$$ReplayDone$.html" class="extype" name="org.eligosource.eventsourced.core.Journal.ReplayDone">org.eligosource.eventsourced.core.Journal.ReplayDone</a>
-when all replayed messages have been added to the corresponding replay targets'
-mailboxes.
+      <p class="shortcomment cmt">Instructs a journal provider to batch-replay input messages.</p><div class="fullcomment"><div class="comment cmt"><p>Instructs a journal provider to batch-replay input messages.
 </p></div><dl class="paramcmts block"><dt class="param">cmds</dt><dd class="cmt"><p>command batch to be executed by the journal provider.</p></dd><dt class="param">p</dt><dd class="cmt"><p>function to be called by the provider for every replayed input message.
        The <code>acks</code> field of a replayed input message must contain the channel ids
        of all acknowledgements for that input message. The replay <code>target</code> of the
@@ -155,10 +152,7 @@ mailboxes.
         <span class="name">executeReplayInMsgs</span><span class="params">(<span name="cmd">cmd: <a href="../../core/Journal$$ReplayInMsgs.html" class="extype" name="org.eligosource.eventsourced.core.Journal.ReplayInMsgs">ReplayInMsgs</a></span>, <span name="p">p: (<a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">Message</a>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Instructs a journal provider to replay input messages.</p><div class="fullcomment"><div class="comment cmt"><p>Instructs a journal provider to replay input messages. The provider must
-reply to the sender with <a href="../../core/Journal$$ReplayDone$.html" class="extype" name="org.eligosource.eventsourced.core.Journal.ReplayDone">org.eligosource.eventsourced.core.Journal.ReplayDone</a>
-when all replayed messages have been added to the corresponding replay target's
-mailbox.
+      <p class="shortcomment cmt">Instructs a journal provider to replay input messages.</p><div class="fullcomment"><div class="comment cmt"><p>Instructs a journal provider to replay input messages.
 </p></div><dl class="paramcmts block"><dt class="param">cmd</dt><dd class="cmt"><p>command to be executed by the journal provider.</p></dd><dt class="param">p</dt><dd class="cmt"><p>function to be called by the provider for each replayed input message.
        The <code>acks</code> field of a replayed input message must contain the channel ids
        of all acknowledgements for that input message.
@@ -451,6 +445,21 @@ optionally together with an acknowledgement.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport#loadSnapshot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadSnapshot(processorId:Int,snapshotFilter:org.eligosource.eventsourced.core.SnapshotMetadata=&gt;Boolean):Option[org.eligosource.eventsourced.core.Snapshot]"></a>
+      <a id="loadSnapshot(Int,(SnapshotMetadata)⇒Boolean):Option[Snapshot]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadSnapshot</span><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="snapshotFilter">snapshotFilter: (<a href="../../core/SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a>) ⇒ <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<a href="../../core/Snapshot.html" class="extype" name="org.eligosource.eventsourced.core.Snapshot">Snapshot</a>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Loads the latest snapshot for specified processor whose metadata match predicate <code>p</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Loads the latest snapshot for specified processor whose metadata match predicate <code>p</code>.
+</p></div><dl class="paramcmts block"><dt class="param">processorId</dt><dd class="cmt"><p>processor id of the snapshot.</p></dd><dt class="param">snapshotFilter</dt><dd class="cmt"><p>predicate for selecting saved snapshots.</p></dd><dt>returns</dt><dd class="cmt"><p>youngest snapshots of those selected by <code>p</code>, if any.
+</p></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -557,6 +566,21 @@ optionally together with an acknowledgement.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport">SynchronousWriteReplaySupport</a> → Actor</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport#saveSnapshot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="saveSnapshot(snapshot:org.eligosource.eventsourced.core.Snapshot):scala.concurrent.Future[org.eligosource.eventsourced.core.SnapshotSaved]"></a>
+      <a id="saveSnapshot(Snapshot):Future[SnapshotSaved]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">saveSnapshot</span><span class="params">(<span name="snapshot">snapshot: <a href="../../core/Snapshot.html" class="extype" name="org.eligosource.eventsourced.core.Snapshot">Snapshot</a></span>)</span><span class="result">: <span class="extype" name="scala.concurrent.Future">Future</span>[<a href="../../core/SnapshotSaved.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotSaved">SnapshotSaved</a>]</span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Saves a snapshot asynchronously.</p><div class="fullcomment"><div class="comment cmt"><p>Saves a snapshot asynchronously.
+</p></div><dl class="paramcmts block"><dt class="param">snapshot</dt><dd class="cmt"><p>a snapshot.</p></dd><dt>returns</dt><dd class="cmt"><p>a future that is completed when the snapshot has been successfully saved.
+</p></dd></dl></div>
     </li><li name="akka.actor.Actor#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="self:akka.actor.ActorRef"></a>
       <a id="self:ActorRef"></a>
@@ -583,6 +607,21 @@ optionally together with an acknowledgement.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Actor</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport#snapshotSaved" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="snapshotSaved(metadata:org.eligosource.eventsourced.core.SnapshotMetadata):Unit"></a>
+      <a id="snapshotSaved(SnapshotMetadata):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">snapshotSaved</span><span class="params">(<span name="metadata">metadata: <a href="../../core/SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Called when a snapshot has been successfully saved.</p><div class="fullcomment"><div class="comment cmt"><p>Called when a snapshot has been successfully saved.
+</p></div><dl class="paramcmts block"><dt class="param">metadata</dt><dd class="cmt"><p>snapshot metadata.
+</p></dd></dl></div>
     </li><li name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport#start" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="start():Unit"></a>
       <a id="start():Unit"></a>
