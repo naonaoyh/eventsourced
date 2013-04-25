@@ -223,7 +223,7 @@ in their mailboxes.
 registered under the id specified by <code>props.id</code>. If <code>props.name</code> is defined it is also
 registered under that name.
 </p></div><dl class="paramcmts block"><dt class="param">props</dt><dd class="cmt"><p>channel configuration object.</p></dd><dt class="param">actorRefFactory</dt><dd class="cmt"><p><a href="Channel.html" class="extype" name="org.eligosource.eventsourced.core.Channel">org.eligosource.eventsourced.core.Channel</a> ref factory.</p></dd><dt>returns</dt><dd class="cmt"><p>a channel ref.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">InvalidActorNameException<p>if <code>name</code> is defined and already in use
-        in the underlying actor system.
+        in the underlying actor system.</p></span><span class="cmt">InvalidChannelIdException<p>if channel id &lt; 1.
 </p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="DefaultChannelProps.html" class="extype" name="org.eligosource.eventsourced.core.DefaultChannelProps">org.eligosource.eventsourced.core.DefaultChannelProps</a>
      <a href="ReliableChannelProps.html" class="extype" name="org.eligosource.eventsourced.core.ReliableChannelProps">org.eligosource.eventsourced.core.ReliableChannelProps</a>
 </p></span></dd></dl></div>
@@ -480,7 +480,7 @@ Use the overloaded <code>processorOf(ProcessorProps)</code> method if you want t
 blocking.
 </p></div><dl class="paramcmts block"><dt class="param">props</dt><dd class="cmt"><p>actor ref configuration object.</p></dd><dt class="param">name</dt><dd class="cmt"><p>optional processor name.</p></dd><dt class="param">actorRefFactory</dt><dd class="cmt"><p><a href="Eventsourced.html" class="extype" name="org.eligosource.eventsourced.core.Eventsourced">org.eligosource.eventsourced.core.Eventsourced</a>
        ref factory.</p></dd><dt>returns</dt><dd class="cmt"><p>a processor ref.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">InvalidActorNameException<p>if <code>name</code> is defined and already in use
-        in the underlying actor system.
+        in the underlying actor system.</p></span><span class="cmt">InvalidProcessorIdException<p>if processor id &lt; 1.
 </p></span></dd></dl></div>
     </li><li name="org.eligosource.eventsourced.core.EventsourcingExtension#processorOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="processorOf(props:org.eligosource.eventsourced.core.ProcessorProps)(implicitactorRefFactory:akka.actor.ActorRefFactory):akka.actor.ActorRef"></a>
@@ -496,7 +496,7 @@ blocking.
       </h4>
       <p class="shortcomment cmt">Registers an <a href="Eventsourced.html" class="extype" name="org.eligosource.eventsourced.core.Eventsourced">org.eligosource.eventsourced.core.Eventsourced</a> processor.</p><div class="fullcomment"><div class="comment cmt"><p>Registers an <a href="Eventsourced.html" class="extype" name="org.eligosource.eventsourced.core.Eventsourced">org.eligosource.eventsourced.core.Eventsourced</a> processor.
 </p></div><dl class="paramcmts block"><dt class="param">props</dt><dd class="cmt"><p>processor configuration object.</p></dd><dt>returns</dt><dd class="cmt"><p>a processor ref.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">InvalidActorNameException<p>if <code>props.name</code> is defined and already
-        in use in the underlying actor system.
+        in use in the underlying actor system.</p></span><span class="cmt">InvalidProcessorIdException<p>if processor id &lt; 1.
 </p></span></dd><dt>See also</dt><dd><span class="cmt"><p><a href="ProcessorProps.html" class="extype" name="org.eligosource.eventsourced.core.ProcessorProps">org.eligosource.eventsourced.core.ProcessorProps</a>
 </p></span></dd></dl></div>
     </li><li name="org.eligosource.eventsourced.core.EventsourcingExtension#processors" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">

@@ -113,7 +113,7 @@
       </h4>
       
     </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.ResequencerActor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ResequencerActorextendsActor"></a>
+      <a id="ResequencerActorextendsActorwithSenderPathReset"></a>
       <a id="ResequencerActor:ResequencerActor"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -121,7 +121,7 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="AsynchronousWriteReplaySupport$ResequencerActor.html"><span class="name">ResequencerActor</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span></span>
+        <a href="AsynchronousWriteReplaySupport$ResequencerActor.html"><span class="name">ResequencerActor</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <a href="SenderPathReset.html" class="extype" name="org.eligosource.eventsourced.journal.common.SenderPathReset">SenderPathReset</a></span>
       </span>
       </h4>
       
@@ -437,19 +437,6 @@
       </span>
       </h4>
       
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#deadLetters" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="deadLetters:akka.actor.ActorRef"></a>
-      <a id="deadLetters:ActorRef"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">deadLetters</span><span class="result">: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -641,7 +628,7 @@
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">var</span>
       </span>
       <span class="symbol">
         <span class="name">resequencer</span><span class="result">: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>
@@ -801,15 +788,15 @@
               
         </dd></dl></div>
     </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#writers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="writers:Vector[akka.actor.ActorRef]"></a>
-      <a id="writers:Vector[ActorRef]"></a>
+      <a id="writers:Seq[akka.actor.ActorRef]"></a>
+      <a id="writers:Seq[ActorRef]"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">val</span>
+        <span class="kind">var</span>
       </span>
       <span class="symbol">
-        <span class="name">writers</span><span class="result">: <span class="extype" name="scala.Vector">Vector</span>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>
+        <span class="name">writers</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>
       </span>
       </h4>
       

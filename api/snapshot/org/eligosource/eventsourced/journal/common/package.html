@@ -153,6 +153,19 @@
       <p class="comment cmt">Protobuf-based <a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">org.eligosource.eventsourced.core.Message</a> serializer that uses
 the Akka <span class="extype" name="akka.serialization.Serialization">akka.serialization.Serialization</span> extension to find a serializer for
 an event contained in an event message.</p>
+    </li><li name="org.eligosource.eventsourced.journal.common.SenderPathReset" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SenderPathResetextendsAnyRef"></a>
+      <a id="SenderPathReset:SenderPathReset"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="SenderPathReset.html"><span class="name">SenderPathReset</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Used by journals to reset persistent sender paths on output event messages.</p>
     </li><li name="org.eligosource.eventsourced.journal.common.SnapshotAccess" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="SnapshotAccessextendsAnyRef"></a>
       <a id="SnapshotAccess:SnapshotAccess"></a>
@@ -193,7 +206,7 @@ an event contained in an event message.</p>
       </h4>
       <p class="comment cmt">Snapshot serializer.</p>
     </li><li name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="SynchronousWriteReplaySupportextendsActor"></a>
+      <a id="SynchronousWriteReplaySupportextendsActorwithSenderPathReset"></a>
       <a id="SynchronousWriteReplaySupport:SynchronousWriteReplaySupport"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -201,7 +214,7 @@ an event contained in an event message.</p>
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <a href="SynchronousWriteReplaySupport.html"><span class="name">SynchronousWriteReplaySupport</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span></span>
+        <a href="SynchronousWriteReplaySupport.html"><span class="name">SynchronousWriteReplaySupport</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <a href="SenderPathReset.html" class="extype" name="org.eligosource.eventsourced.journal.common.SenderPathReset">SenderPathReset</a></span>
       </span>
       </h4>
       

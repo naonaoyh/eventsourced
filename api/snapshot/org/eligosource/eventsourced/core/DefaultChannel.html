@@ -49,6 +49,8 @@ to <code>destination</code>. If <code>destination</code> positively confirms the
 with <code>Message.confirm()</code> an <i>acknowledgement</i> is written to the journal. In all
 other cases no action is taken. Acknowledgements are used during replay to decide
 if a channel should ignore a message or not.</p><p>A <code>DefaultChannel</code> preserves the <code>sender</code> reference (i.e. forwards it to <code>destination</code>).
+Furthermore, it can only be used in combination with an <code>Eventsourced</code> processor as
+described in the documentation of <a href="Channel.html" class="extype" name="org.eligosource.eventsourced.core.Channel">org.eligosource.eventsourced.core.Channel</a>.
 </p></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="Journal$$WriteAck.html" class="extype" name="org.eligosource.eventsourced.core.Journal.WriteAck">org.eligosource.eventsourced.core.Journal.WriteAck</a>
 </p></span><span class="cmt"><p><a href="Channel.html" class="extype" name="org.eligosource.eventsourced.core.Channel">org.eligosource.eventsourced.core.Channel</a></p></span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>

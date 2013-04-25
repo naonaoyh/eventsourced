@@ -40,13 +40,13 @@
         <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">SynchronousWriteReplaySupport</span><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span></span>
+        <span class="name">SynchronousWriteReplaySupport</span><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span> with <a href="SenderPathReset.html" class="extype" name="org.eligosource.eventsourced.journal.common.SenderPathReset">SenderPathReset</a></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="akka.actor.Actor">Actor</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><a href="SenderPathReset.html" class="extype" name="org.eligosource.eventsourced.journal.common.SenderPathReset">SenderPathReset</a>, <span class="extype" name="akka.actor.Actor">Actor</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -64,7 +64,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport"><span>SynchronousWriteReplaySupport</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport"><span>SynchronousWriteReplaySupport</span></li><li class="in" name="org.eligosource.eventsourced.journal.common.SenderPathReset"><span>SenderPathReset</span></li><li class="in" name="akka.actor.Actor"><span>Actor</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -432,6 +432,20 @@ optionally together with an acknowledgement.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport#initialCounter" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="initialCounter:Long"></a>
+      <a id="initialCounter:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">initialCounter</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns the initial counter value after journal start.</p><div class="fullcomment"><div class="comment cmt"><p>Returns the initial counter value after journal start.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport">SynchronousWriteReplaySupport</a> → <a href="SenderPathReset.html" class="extype" name="org.eligosource.eventsourced.journal.common.SenderPathReset">SenderPathReset</a></dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -566,6 +580,22 @@ optionally together with an acknowledgement.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport">SynchronousWriteReplaySupport</a> → Actor</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.common.SenderPathReset#resetTempPath" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="resetTempPath(p:org.eligosource.eventsourced.core.Message=&gt;Unit):org.eligosource.eventsourced.core.Message=&gt;Unit"></a>
+      <a id="resetTempPath((Message)⇒Unit):(Message)⇒Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">resetTempPath</span><span class="params">(<span name="p">p: (<a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">Message</a>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: (<a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">Message</a>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Decorates <code>p</code> to reset <code>Message.senderPath</code>.</p><div class="fullcomment"><div class="comment cmt"><p>Decorates <code>p</code> to reset <code>Message.senderPath</code>. The <code>senderPath</code> is reset if the event message</p><ul><li>has a <code>sequenceNr &lt; initialCounter</code> and</li><li>has a <code>senderPath</code> that refers to a temporary (short-lived) system actor (e.g. a future)</li></ul><p>Otherwise, the <code>senderPath</code> is not changed. This ensures that references to temporary system
+actors from previous application runs are not resolved.
+</p></div><dl class="paramcmts block"><dt class="param">p</dt><dd class="cmt"><p>event message handler.</p></dd><dt>returns</dt><dd class="cmt"><p>decorated event message handler.
+</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="SenderPathReset.html" class="extype" name="org.eligosource.eventsourced.journal.common.SenderPathReset">SenderPathReset</a></dd></dl></div>
     </li><li name="org.eligosource.eventsourced.journal.common.SynchronousWriteReplaySupport#saveSnapshot" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="saveSnapshot(snapshot:org.eligosource.eventsourced.core.Snapshot):scala.concurrent.Future[org.eligosource.eventsourced.core.SnapshotSaved]"></a>
       <a id="saveSnapshot(Snapshot):Future[SnapshotSaved]"></a>
@@ -759,7 +789,9 @@ optionally together with an acknowledgement.
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="akka.actor.Actor">
+        <div class="parent" name="org.eligosource.eventsourced.journal.common.SenderPathReset">
+              <h3>Inherited from <a href="SenderPathReset.html" class="extype" name="org.eligosource.eventsourced.journal.common.SenderPathReset">SenderPathReset</a></h3>
+            </div><div class="parent" name="akka.actor.Actor">
               <h3>Inherited from <span class="extype" name="akka.actor.Actor">Actor</span></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
