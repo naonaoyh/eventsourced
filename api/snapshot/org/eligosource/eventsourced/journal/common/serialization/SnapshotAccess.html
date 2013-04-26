@@ -2,22 +2,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>MessageSerialization - org.eligosource.eventsourced.journal.common.MessageSerialization</title>
-          <meta name="description" content="MessageSerialization - org.eligosource.eventsourced.journal.common.MessageSerialization" />
-          <meta name="keywords" content="MessageSerialization org.eligosource.eventsourced.journal.common.MessageSerialization" />
+          <title>SnapshotAccess - org.eligosource.eventsourced.journal.common.serialization.SnapshotAccess</title>
+          <meta name="description" content="SnapshotAccess - org.eligosource.eventsourced.journal.common.serialization.SnapshotAccess" />
+          <meta name="keywords" content="SnapshotAccess org.eligosource.eventsourced.journal.common.serialization.SnapshotAccess" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
-      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
-      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
-      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <link href="../../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/tools.tooltip.js"></script>
       
       <script type="text/javascript">
          if(top === self) {
-            var url = '../../../../../index.html';
-            var hash = 'org.eligosource.eventsourced.journal.common.MessageSerialization';
+            var url = '../../../../../../index.html';
+            var hash = 'org.eligosource.eventsourced.journal.common.serialization.SnapshotAccess';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -29,30 +29,25 @@
         </head>
         <body class="type">
       <div id="definition">
-        <a href="MessageSerialization$.html" title="Go to companion"><img src="../../../../../lib/class_to_object_big.png" /></a>
-        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.journal">journal</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.journal.common">common</a></p>
-        <h1><a href="MessageSerialization$.html" title="Go to companion">MessageSerialization</a></h1>
+        <img src="../../../../../../lib/trait_big.png" />
+        <p id="owner"><a href="../../../../../package.html" class="extype" name="org">org</a>.<a href="../../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced.journal">journal</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.journal.common">common</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.journal.common.serialization">serialization</a></p>
+        <h1>SnapshotAccess</h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">class</span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">MessageSerialization</span><span class="result"> extends <span class="extype" name="akka.actor.Extension">Extension</span></span>
+        <span class="name">SnapshotAccess</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Extension for protobuf-based (de)serialization of event messages.
-Serializers for events contained in event messages are looked up
-in the Akka <span class="extype" name="akka.serialization.Serialization">akka.serialization.Serialization</span> extension.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Input and output stream management for snapshot IO.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="akka.actor.Extension">Extension</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div><div class="toggleContainer block">
-          <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a href="CommandSerialization.html" class="extype" name="org.eligosource.eventsourced.journal.common.CommandSerialization">CommandSerialization</a></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -70,7 +65,7 @@ in the Akka <span class="extype" name="akka.serialization.Serialization">akka.se
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.eligosource.eventsourced.journal.common.MessageSerialization"><span>MessageSerialization</span></li><li class="in" name="akka.actor.Extension"><span>Extension</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.eligosource.eventsourced.journal.common.serialization.SnapshotAccess"><span>SnapshotAccess</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -88,30 +83,47 @@ in the Akka <span class="extype" name="akka.serialization.Serialization">akka.se
 
       <div id="template">
         <div id="allMembers">
-        <div id="constructors" class="members">
-              <h3>Instance Constructors</h3>
-              <ol><li name="org.eligosource.eventsourced.journal.common.MessageSerialization#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="&lt;init&gt;(system:akka.actor.ExtendedActorSystem):org.eligosource.eventsourced.journal.common.MessageSerialization"></a>
-      <a id="&lt;init&gt;:MessageSerialization"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">new</span>
-      </span>
-      <span class="symbol">
-        <span class="name">MessageSerialization</span><span class="params">(<span name="system">system: <span class="extype" name="akka.actor.ExtendedActorSystem">ExtendedActorSystem</span></span>)</span>
-      </span>
-      </h4>
-      
-    </li></ol>
-            </div>
-
         
 
         
 
         <div id="values" class="values members">
-              <h3>Value Members</h3>
+              <h3>Abstract Value Members</h3>
+              <ol><li name="org.eligosource.eventsourced.journal.common.serialization.SnapshotAccess#withInputStream" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="withInputStream(metadata:org.eligosource.eventsourced.core.SnapshotMetadata)(f:java.io.InputStream=&gt;org.eligosource.eventsourced.core.Snapshot):org.eligosource.eventsourced.core.Snapshot"></a>
+      <a id="withInputStream(SnapshotMetadata)((InputStream)⇒Snapshot):Snapshot"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withInputStream</span><span class="params">(<span name="metadata">metadata: <a href="../../../core/SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a></span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="java.io.InputStream">InputStream</span>) ⇒ <a href="../../../core/Snapshot.html" class="extype" name="org.eligosource.eventsourced.core.Snapshot">Snapshot</a></span>)</span><span class="result">: <a href="../../../core/Snapshot.html" class="extype" name="org.eligosource.eventsourced.core.Snapshot">Snapshot</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Provides a managed input stream for reading snapshots.</p><div class="fullcomment"><div class="comment cmt"><p>Provides a managed input stream for reading snapshots.
+</p></div><dl class="paramcmts block"><dt class="param">metadata</dt><dd class="cmt"><p>snapshot metadata needed to create an input stream.</p></dd><dt class="param">f</dt><dd class="cmt"><p>called with the managed input stream.</p></dd><dt>returns</dt><dd class="cmt"><p>read snapshot.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">IOException<p>if reading fails.
+</p></span></dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.common.serialization.SnapshotAccess#withOutputStream" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="withOutputStream(metadata:org.eligosource.eventsourced.core.SnapshotMetadata)(p:java.io.OutputStream=&gt;Unit):Unit"></a>
+      <a id="withOutputStream(SnapshotMetadata)((OutputStream)⇒Unit):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withOutputStream</span><span class="params">(<span name="metadata">metadata: <a href="../../../core/SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a></span>)</span><span class="params">(<span name="p">p: (<span class="extype" name="java.io.OutputStream">OutputStream</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Provides a managed output stream for writing snapshots.</p><div class="fullcomment"><div class="comment cmt"><p>Provides a managed output stream for writing snapshots.
+</p></div><dl class="paramcmts block"><dt class="param">metadata</dt><dd class="cmt"><p>snapshot metadata needed to create an output stream.</p></dd><dt class="param">p</dt><dd class="cmt"><p>called with the managed output stream.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">IOException<p>if writing fails.
+</p></span></dd></dl></div>
+    </li></ol>
+            </div>
+
+        <div id="values" class="values members">
+              <h3>Concrete Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:AnyRef):Boolean"></a>
       <a id="!=(AnyRef):Boolean"></a>
@@ -202,25 +214,10 @@ in the Akka <span class="extype" name="akka.serialization.Serialization">akka.se
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.MessageSerialization#deserializeMessage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="deserializeMessage(bytes:Array[Byte]):org.eligosource.eventsourced.core.Message"></a>
-      <a id="deserializeMessage(Array[Byte]):Message"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">deserializeMessage</span><span class="params">(<span name="bytes">bytes: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]</span>)</span><span class="result">: <a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">Message</a></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Deserializes an event <a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">org.eligosource.eventsourced.core.Message</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Deserializes an event <a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">org.eligosource.eventsourced.core.Message</a>.
-</p></div><dl class="paramcmts block"><dt class="param">bytes</dt><dd class="cmt"><p>serialized event message.</p></dd><dt>returns</dt><dd class="cmt"><p>event message.
-</p></dd></dl></div>
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -247,19 +244,6 @@ in the Akka <span class="extype" name="akka.serialization.Serialization">akka.se
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.MessageSerialization#extension" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="extension:akka.serialization.Serialization"></a>
-      <a id="extension:Serialization"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">extension</span><span class="result">: <span class="extype" name="akka.serialization.Serialization">Serialization</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -272,7 +256,7 @@ in the Akka <span class="extype" name="akka.serialization.Serialization">akka.se
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -315,32 +299,6 @@ in the Akka <span class="extype" name="akka.serialization.Serialization">akka.se
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.MessageSerialization#message" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="message(messageProtocol:org.eligosource.eventsourced.journal.common.JournalProtocol.MessageProtocol):org.eligosource.eventsourced.core.Message"></a>
-      <a id="message(MessageProtocol):Message"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">message</span><span class="params">(<span name="messageProtocol">messageProtocol: <span class="extype" name="org.eligosource.eventsourced.journal.common.JournalProtocol.MessageProtocol">MessageProtocol</span></span>)</span><span class="result">: <a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">Message</a></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.MessageSerialization#messageProtocolBuilder" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="messageProtocolBuilder(message:org.eligosource.eventsourced.core.Message):org.eligosource.eventsourced.journal.common.JournalProtocol.MessageProtocol.Builder"></a>
-      <a id="messageProtocolBuilder(Message):Builder"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">messageProtocolBuilder</span><span class="params">(<span name="message">message: <a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">Message</a></span>)</span><span class="result">: <span class="extype" name="org.eligosource.eventsourced.journal.common.JournalProtocol.MessageProtocol.Builder">Builder</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -380,21 +338,6 @@ in the Akka <span class="extype" name="akka.serialization.Serialization">akka.se
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.MessageSerialization#serializeMessage" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="serializeMessage(message:org.eligosource.eventsourced.core.Message):Array[Byte]"></a>
-      <a id="serializeMessage(Message):Array[Byte]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">serializeMessage</span><span class="params">(<span name="message">message: <a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">Message</a></span>)</span><span class="result">: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Byte">Byte</span>]</span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Serializes an event <a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">org.eligosource.eventsourced.core.Message</a>.</p><div class="fullcomment"><div class="comment cmt"><p>Serializes an event <a href="../../core/Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">org.eligosource.eventsourced.core.Message</a>.
-</p></div><dl class="paramcmts block"><dt class="param">message</dt><dd class="cmt"><p>event message.</p></dd><dt>returns</dt><dd class="cmt"><p>serialized event message.
-</p></dd></dl></div>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -478,9 +421,7 @@ in the Akka <span class="extype" name="akka.serialization.Serialization">akka.se
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="akka.actor.Extension">
-              <h3>Inherited from <span class="extype" name="akka.actor.Extension">Extension</span></h3>
-            </div><div class="parent" name="scala.AnyRef">
+        <div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>

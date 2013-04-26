@@ -2,22 +2,22 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>SnapshotAccess - org.eligosource.eventsourced.journal.common.SnapshotAccess</title>
-          <meta name="description" content="SnapshotAccess - org.eligosource.eventsourced.journal.common.SnapshotAccess" />
-          <meta name="keywords" content="SnapshotAccess org.eligosource.eventsourced.journal.common.SnapshotAccess" />
+          <title>JournalProtocol - org.eligosource.eventsourced.journal.common.serialization.JournalProtocol</title>
+          <meta name="description" content="JournalProtocol - org.eligosource.eventsourced.journal.common.serialization.JournalProtocol" />
+          <meta name="keywords" content="JournalProtocol org.eligosource.eventsourced.journal.common.serialization.JournalProtocol" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
-      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
-      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
-      <script type="text/javascript" src="../../../../../lib/jquery.js" id="jquery-js"></script>
-      <script type="text/javascript" src="../../../../../lib/jquery-ui.js"></script>
-      <script type="text/javascript" src="../../../../../lib/template.js"></script>
-      <script type="text/javascript" src="../../../../../lib/tools.tooltip.js"></script>
+      <link href="../../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../../../lib/tools.tooltip.js"></script>
       
       <script type="text/javascript">
          if(top === self) {
-            var url = '../../../../../index.html';
-            var hash = 'org.eligosource.eventsourced.journal.common.SnapshotAccess';
+            var url = '../../../../../../index.html';
+            var hash = 'org.eligosource.eventsourced.journal.common.serialization.JournalProtocol';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -29,23 +29,22 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../../../lib/trait_big.png" />
-        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.journal">journal</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.journal.common">common</a></p>
-        <h1>SnapshotAccess</h1>
+        <img src="../../../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../../../package.html" class="extype" name="org">org</a>.<a href="../../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced.journal">journal</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.journal.common">common</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.journal.common.serialization">serialization</a></p>
+        <h1>JournalProtocol</h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">trait</span>
+        <span class="modifier">final </span>
+        <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">SnapshotAccess</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+        <span class="name">JournalProtocol</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Input and output stream management for snapshot IO.
-</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -65,7 +64,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.eligosource.eventsourced.journal.common.SnapshotAccess"><span>SnapshotAccess</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.eligosource.eventsourced.journal.common.serialization.JournalProtocol"><span>JournalProtocol</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -87,43 +86,10 @@
 
         
 
-        <div id="values" class="values members">
-              <h3>Abstract Value Members</h3>
-              <ol><li name="org.eligosource.eventsourced.journal.common.SnapshotAccess#withInputStream" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="withInputStream(metadata:org.eligosource.eventsourced.core.SnapshotMetadata)(f:java.io.InputStream=&gt;org.eligosource.eventsourced.core.Snapshot):org.eligosource.eventsourced.core.Snapshot"></a>
-      <a id="withInputStream(SnapshotMetadata)((InputStream)⇒Snapshot):Snapshot"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">withInputStream</span><span class="params">(<span name="metadata">metadata: <a href="../../core/SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a></span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="java.io.InputStream">InputStream</span>) ⇒ <a href="../../core/Snapshot.html" class="extype" name="org.eligosource.eventsourced.core.Snapshot">Snapshot</a></span>)</span><span class="result">: <a href="../../core/Snapshot.html" class="extype" name="org.eligosource.eventsourced.core.Snapshot">Snapshot</a></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Provides a managed input stream for reading snapshots.</p><div class="fullcomment"><div class="comment cmt"><p>Provides a managed input stream for reading snapshots.
-</p></div><dl class="paramcmts block"><dt class="param">metadata</dt><dd class="cmt"><p>snapshot metadata needed to create an input stream.</p></dd><dt class="param">f</dt><dd class="cmt"><p>called with the managed input stream.</p></dd><dt>returns</dt><dd class="cmt"><p>read snapshot.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">IOException<p>if reading fails.
-</p></span></dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.SnapshotAccess#withOutputStream" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="withOutputStream(metadata:org.eligosource.eventsourced.core.SnapshotMetadata)(p:java.io.OutputStream=&gt;Unit):Unit"></a>
-      <a id="withOutputStream(SnapshotMetadata)((OutputStream)⇒Unit):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">withOutputStream</span><span class="params">(<span name="metadata">metadata: <a href="../../core/SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a></span>)</span><span class="params">(<span name="p">p: (<span class="extype" name="java.io.OutputStream">OutputStream</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Provides a managed output stream for writing snapshots.</p><div class="fullcomment"><div class="comment cmt"><p>Provides a managed output stream for writing snapshots.
-</p></div><dl class="paramcmts block"><dt class="param">metadata</dt><dd class="cmt"><p>snapshot metadata needed to create an output stream.</p></dd><dt class="param">p</dt><dd class="cmt"><p>called with the managed output stream.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">IOException<p>if writing fails.
-</p></span></dd></dl></div>
-    </li></ol>
-            </div>
+        
 
         <div id="values" class="values members">
-              <h3>Concrete Value Members</h3>
+              <h3>Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:AnyRef):Boolean"></a>
       <a id="!=(AnyRef):Boolean"></a>
@@ -214,7 +180,7 @@
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -256,7 +222,7 @@
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>

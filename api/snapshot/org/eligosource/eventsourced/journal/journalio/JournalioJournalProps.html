@@ -40,7 +40,7 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">JournalioJournalProps</span><span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="checksum">checksum: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result"> extends <a href="../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">JournalioJournalProps</span><span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="checksum">checksum: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="snapshotDir">snapshotDir: <span class="extype" name="java.io.File">File</span> = <span class="symbol">new java.io.File(&quot;snapshots&quot;)</span></span>, <span name="snapshotSerializer">snapshotSerializer: <a href="../common/serialization/SnapshotSerializer.html" class="extype" name="org.eligosource.eventsourced.journal.common.serialization.SnapshotSerializer">SnapshotSerializer</a> = <span class="defval" name="org.eligosource.eventsourced.journal.common.serialization.SnapshotSerializer.java">...</span></span>, <span name="snapshotSaveTimeout">snapshotSaveTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(1).hour">...</span></span>)</span><span class="result"> extends <a href="../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a> with <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -97,7 +97,7 @@ has the following properties.</p><p>Pros:</p><ul><li>efficient replay of input m
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="org.eligosource.eventsourced.journal.journalio.JournalioJournalProps#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(dir:java.io.File,name:Option[String],dispatcherName:Option[String],fsync:Boolean,checksum:Boolean):org.eligosource.eventsourced.journal.journalio.JournalioJournalProps"></a>
+      <a id="&lt;init&gt;(dir:java.io.File,name:Option[String],dispatcherName:Option[String],fsync:Boolean,checksum:Boolean,snapshotDir:java.io.File,snapshotSerializer:org.eligosource.eventsourced.journal.common.serialization.SnapshotSerializer,snapshotSaveTimeout:scala.concurrent.duration.FiniteDuration):org.eligosource.eventsourced.journal.journalio.JournalioJournalProps"></a>
       <a id="&lt;init&gt;:JournalioJournalProps"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -105,7 +105,7 @@ has the following properties.</p><p>Pros:</p><ul><li>efficient replay of input m
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">JournalioJournalProps</span><span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="checksum">checksum: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span>
+        <span class="name">JournalioJournalProps</span><span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">scala.None</span></span>, <span name="fsync">fsync: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="checksum">checksum: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="snapshotDir">snapshotDir: <span class="extype" name="java.io.File">File</span> = <span class="symbol">new java.io.File(&quot;snapshots&quot;)</span></span>, <span name="snapshotSerializer">snapshotSerializer: <a href="../common/serialization/SnapshotSerializer.html" class="extype" name="org.eligosource.eventsourced.journal.common.serialization.SnapshotSerializer">SnapshotSerializer</a> = <span class="defval" name="org.eligosource.eventsourced.journal.common.serialization.SnapshotSerializer.java">...</span></span>, <span name="snapshotSaveTimeout">snapshotSaveTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span> = <span class="defval" name="scala.concurrent.duration.`package`.DurationInt(1).hour">...</span></span>)</span>
       </span>
       </h4>
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">dir</dt><dd class="cmt"><p>Journal directory.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.</p></dd><dt class="param">fsync</dt><dd class="cmt"><p><code>true</code> if every write is physically synced. Default is <code>false</code>.</p></dd><dt class="param">checksum</dt><dd class="cmt"><p><code>true</code> if checksums are verified on read. Default is <code>false</code>.
@@ -387,6 +387,45 @@ has the following properties.</p><p>Pros:</p><ul><li>efficient replay of input m
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.journalio.JournalioJournalProps#snapshotDir" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="snapshotDir:java.io.File"></a>
+      <a id="snapshotDir:File"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">snapshotDir</span><span class="result">: <span class="extype" name="java.io.File">File</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.journalio.JournalioJournalProps#snapshotSaveTimeout" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="snapshotSaveTimeout:scala.concurrent.duration.FiniteDuration"></a>
+      <a id="snapshotSaveTimeout:FiniteDuration"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">snapshotSaveTimeout</span><span class="result">: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.journalio.JournalioJournalProps#snapshotSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="snapshotSerializer:org.eligosource.eventsourced.journal.common.serialization.SnapshotSerializer"></a>
+      <a id="snapshotSerializer:SnapshotSerializer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">snapshotSerializer</span><span class="result">: <a href="../common/serialization/SnapshotSerializer.html" class="extype" name="org.eligosource.eventsourced.journal.common.serialization.SnapshotSerializer">SnapshotSerializer</a></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -500,6 +539,45 @@ has the following properties.</p><p>Pros:</p><ul><li>efficient replay of input m
       </span>
       </h4>
       <p class="shortcomment cmt">Returns a new <code>JournalioJournalProps</code> with specified journal actor name.</p>
+    </li><li name="org.eligosource.eventsourced.journal.journalio.JournalioJournalProps#withSnapshotDir" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withSnapshotDir(snapshotDir:java.io.File):org.eligosource.eventsourced.journal.journalio.JournalioJournalProps"></a>
+      <a id="withSnapshotDir(File):JournalioJournalProps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withSnapshotDir</span><span class="params">(<span name="snapshotDir">snapshotDir: <span class="extype" name="java.io.File">File</span></span>)</span><span class="result">: <a href="" class="extype" name="org.eligosource.eventsourced.journal.journalio.JournalioJournalProps">JournalioJournalProps</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a new <code>JournalioJournalProps</code> with specified snapshot directory.</p>
+    </li><li name="org.eligosource.eventsourced.journal.journalio.JournalioJournalProps#withSnapshotSaveTimeout" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withSnapshotSaveTimeout(snapshotSaveTimeout:scala.concurrent.duration.FiniteDuration):org.eligosource.eventsourced.journal.journalio.JournalioJournalProps"></a>
+      <a id="withSnapshotSaveTimeout(FiniteDuration):JournalioJournalProps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withSnapshotSaveTimeout</span><span class="params">(<span name="snapshotSaveTimeout">snapshotSaveTimeout: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span></span>)</span><span class="result">: <a href="" class="extype" name="org.eligosource.eventsourced.journal.journalio.JournalioJournalProps">JournalioJournalProps</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a new <code>JournalioJournalProps</code> with specified snapshot save timeout.</p>
+    </li><li name="org.eligosource.eventsourced.journal.journalio.JournalioJournalProps#withSnapshotSerializer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="withSnapshotSerializer(snapshotSerializer:org.eligosource.eventsourced.journal.common.serialization.SnapshotSerializer):org.eligosource.eventsourced.journal.journalio.JournalioJournalProps"></a>
+      <a id="withSnapshotSerializer(SnapshotSerializer):JournalioJournalProps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">withSnapshotSerializer</span><span class="params">(<span name="snapshotSerializer">snapshotSerializer: <a href="../common/serialization/SnapshotSerializer.html" class="extype" name="org.eligosource.eventsourced.journal.common.serialization.SnapshotSerializer">SnapshotSerializer</a></span>)</span><span class="result">: <a href="" class="extype" name="org.eligosource.eventsourced.journal.journalio.JournalioJournalProps">JournalioJournalProps</a></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">Returns a new <code>JournalioJournalProps</code> with specified snapshot serializer.</p>
     </li></ol>
             </div>
 
