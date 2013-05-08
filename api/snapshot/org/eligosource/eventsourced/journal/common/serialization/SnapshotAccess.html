@@ -90,18 +90,18 @@
         <div id="values" class="values members">
               <h3>Abstract Value Members</h3>
               <ol><li name="org.eligosource.eventsourced.journal.common.serialization.SnapshotAccess#withInputStream" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="withInputStream(metadata:org.eligosource.eventsourced.core.SnapshotMetadata)(f:java.io.InputStream=&gt;org.eligosource.eventsourced.core.Snapshot):org.eligosource.eventsourced.core.Snapshot"></a>
-      <a id="withInputStream(SnapshotMetadata)((InputStream)⇒Snapshot):Snapshot"></a>
+      <a id="withInputStream(metadata:org.eligosource.eventsourced.core.SnapshotMetadata)(f:java.io.InputStream=&gt;Any):Any"></a>
+      <a id="withInputStream(SnapshotMetadata)((InputStream)⇒Any):Any"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">abstract </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">withInputStream</span><span class="params">(<span name="metadata">metadata: <a href="../../../core/SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a></span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="java.io.InputStream">InputStream</span>) ⇒ <a href="../../../core/Snapshot.html" class="extype" name="org.eligosource.eventsourced.core.Snapshot">Snapshot</a></span>)</span><span class="result">: <a href="../../../core/Snapshot.html" class="extype" name="org.eligosource.eventsourced.core.Snapshot">Snapshot</a></span>
+        <span class="name">withInputStream</span><span class="params">(<span name="metadata">metadata: <a href="../../../core/SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a></span>)</span><span class="params">(<span name="f">f: (<span class="extype" name="java.io.InputStream">InputStream</span>) ⇒ <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Any">Any</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Provides a managed input stream for reading snapshots.</p><div class="fullcomment"><div class="comment cmt"><p>Provides a managed input stream for reading snapshots.
+      <p class="shortcomment cmt">Provides a managed input stream for reading a state object.</p><div class="fullcomment"><div class="comment cmt"><p>Provides a managed input stream for reading a state object.
 </p></div><dl class="paramcmts block"><dt class="param">metadata</dt><dd class="cmt"><p>snapshot metadata needed to create an input stream.</p></dd><dt class="param">f</dt><dd class="cmt"><p>called with the managed input stream.</p></dd><dt>returns</dt><dd class="cmt"><p>read snapshot.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">IOException<p>if reading fails.
 </p></span></dd></dl></div>
     </li><li name="org.eligosource.eventsourced.journal.common.serialization.SnapshotAccess#withOutputStream" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
@@ -116,7 +116,7 @@
         <span class="name">withOutputStream</span><span class="params">(<span name="metadata">metadata: <a href="../../../core/SnapshotMetadata.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotMetadata">SnapshotMetadata</a></span>)</span><span class="params">(<span name="p">p: (<span class="extype" name="java.io.OutputStream">OutputStream</span>) ⇒ <span class="extype" name="scala.Unit">Unit</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Provides a managed output stream for writing snapshots.</p><div class="fullcomment"><div class="comment cmt"><p>Provides a managed output stream for writing snapshots.
+      <p class="shortcomment cmt">Provides a managed output stream for writing a state object.</p><div class="fullcomment"><div class="comment cmt"><p>Provides a managed output stream for writing a state object.
 </p></div><dl class="paramcmts block"><dt class="param">metadata</dt><dd class="cmt"><p>snapshot metadata needed to create an output stream.</p></dd><dt class="param">p</dt><dd class="cmt"><p>called with the managed output stream.</p></dd></dl><dl class="attributes block"> <dt>Exceptions thrown</dt><dd><span class="cmt">IOException<p>if writing fails.
 </p></span></dd></dl></div>
     </li></ol>
