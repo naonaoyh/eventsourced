@@ -44,13 +44,13 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Journal actor configuration object.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Journal configuration object.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div><div class="toggleContainer block">
           <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a href="../journal/InmemJournalProps.html" class="extype" name="org.eligosource.eventsourced.journal.InmemJournalProps">InmemJournalProps</a>, <a href="../journal/JournalioJournalProps.html" class="extype" name="org.eligosource.eventsourced.journal.JournalioJournalProps">JournalioJournalProps</a>, <a href="../journal/LeveldbJournalProps.html" class="extype" name="org.eligosource.eventsourced.journal.LeveldbJournalProps">LeveldbJournalProps</a></div>
+          <div class="subClasses hiddenContent"><a href="../journal/dynamodb/DynamoDBJournalProps.html" class="extype" name="org.eligosource.eventsourced.journal.dynamodb.DynamoDBJournalProps">DynamoDBJournalProps</a>, <a href="../journal/hbase/HBaseJournalProps.html" class="extype" name="org.eligosource.eventsourced.journal.hbase.HBaseJournalProps">HBaseJournalProps</a>, <a href="../journal/inmem/InmemJournalProps.html" class="extype" name="org.eligosource.eventsourced.journal.inmem.InmemJournalProps">InmemJournalProps</a>, <a href="../journal/journalio/JournalioJournalProps.html" class="extype" name="org.eligosource.eventsourced.journal.journalio.JournalioJournalProps">JournalioJournalProps</a>, <a href="../journal/leveldb/LeveldbJournalProps.html" class="extype" name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps">LeveldbJournalProps</a>, <a href="../journal/mongodb/casbah/MongodbCasbahJournalProps.html" class="extype" name="org.eligosource.eventsourced.journal.mongodb.casbah.MongodbCasbahJournalProps">MongodbCasbahJournalProps</a>, <a href="../journal/mongodb/reactive/MongodbReactiveJournalProps.html" class="extype" name="org.eligosource.eventsourced.journal.mongodb.reactive.MongodbReactiveJournalProps">MongodbReactiveJournalProps</a></div>
         </div></div>
         
 
@@ -106,18 +106,18 @@
       </h4>
       <p class="shortcomment cmt">Optional dispatcher name.</p>
     </li><li name="org.eligosource.eventsourced.core.JournalProps#journal" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="journal:org.eligosource.eventsourced.core.Journal"></a>
-      <a id="journal:Journal"></a>
+      <a id="journal:akka.actor.Actor"></a>
+      <a id="journal:Actor"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">abstract </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">journal</span><span class="result">: <a href="Journal.html" class="extype" name="org.eligosource.eventsourced.core.Journal">Journal</a></span>
+        <span class="name">journal</span><span class="result">: <span class="extype" name="akka.actor.Actor">Actor</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Creates a <a href="Journal.html" class="extype" name="org.eligosource.eventsourced.core.Journal">org.eligosource.eventsourced.core.Journal</a> actor instance.</p>
+      <p class="shortcomment cmt">Creates a journal actor instance.</p>
     </li><li name="org.eligosource.eventsourced.core.JournalProps#name" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="name:Option[String]"></a>
       <a id="name:Option[String]"></a>
@@ -130,7 +130,7 @@
         <span class="name">name</span><span class="result">: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Optional channel name.</p>
+      <p class="shortcomment cmt">Optional journal name.</p>
     </li></ol>
             </div>
 
@@ -226,7 +226,7 @@
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<span class="extype" name="java.lang">java.lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -268,7 +268,7 @@
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<span class="extype" name="java.lang">java.lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>

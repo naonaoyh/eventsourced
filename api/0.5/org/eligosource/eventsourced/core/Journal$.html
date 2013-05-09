@@ -29,9 +29,9 @@
         </head>
         <body class="value">
       <div id="definition">
-        <a href="Journal.html" title="Go to companion"><img src="../../../../lib/object_to_trait_big.png" /></a>
+        <img src="../../../../lib/object_big.png" />
         <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.core">core</a></p>
-        <h1><a href="Journal.html" title="Go to companion">Journal</a></h1>
+        <h1>Journal</h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -44,7 +44,7 @@
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Defines message types that can be processed by a <a href="Journal.html" class="extype" name="org.eligosource.eventsourced.core.Journal">org.eligosource.eventsourced.core.Journal</a>.
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Defines message types that can be processed by a journal actor.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -164,7 +164,7 @@ command.</p>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Journal$$ReplayInMsgs.html"><span class="name">ReplayInMsgs</span></a><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="fromSequenceNr">fromSequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="target">target: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="Journal$$ReplayInMsgs.html"><span class="name">ReplayInMsgs</span></a><span class="params">(<span name="params">params: <a href="ReplayParams.html" class="extype" name="org.eligosource.eventsourced.core.ReplayParams">ReplayParams</a></span>, <span name="target">target: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">Instructs a <code>Journal</code> to replay input messages to a single <code>Eventsourced</code> processor.</p>
@@ -177,10 +177,63 @@ command.</p>
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <a href="Journal$$ReplayOutMsgs.html"><span class="name">ReplayOutMsgs</span></a><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>, <span name="fromSequenceNr">fromSequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="target">target: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <a href="Journal$$ReplayOutMsgs.html"><span class="name">ReplayOutMsgs</span></a><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>, <span name="fromSequenceNr">fromSequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="toSequenceNr">toSequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="target">target: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       <p class="comment cmt">Instructs a <code>Journal</code> to replay output messages for a single <code>ReliableChannel</code>.</p>
+    </li><li name="org.eligosource.eventsourced.core.Journal.RequestSnapshot" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="RequestSnapshotextendsProductwithSerializable"></a>
+      <a id="RequestSnapshot:RequestSnapshot"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Journal$$RequestSnapshot.html"><span class="name">RequestSnapshot</span></a><span class="params">(<span name="processorId">processorId: <span class="extype" name="scala.Int">Int</span></span>, <span name="target">target: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Instructs a journal to request a state snapshot from a processor identified by
+<code>processorId</code>.</p>
+    </li><li name="org.eligosource.eventsourced.core.Journal.SaveSnapshot" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SaveSnapshotextendsProductwithSerializable"></a>
+      <a id="SaveSnapshot:SaveSnapshot"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Journal$$SaveSnapshot.html"><span class="name">SaveSnapshot</span></a><span class="params">(<span name="snapshot">snapshot: <a href="Snapshot.html" class="extype" name="org.eligosource.eventsourced.core.Snapshot">Snapshot</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Instructs a journal to save the provided <code>snapshot</code>.</p>
+    </li><li name="org.eligosource.eventsourced.core.Journal.SaveSnapshotDone" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SaveSnapshotDoneextendsProductwithSerializable"></a>
+      <a id="SaveSnapshotDone:SaveSnapshotDone"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Journal$$SaveSnapshotDone.html"><span class="name">SaveSnapshotDone</span></a><span class="params">(<span name="metadata">metadata: <a href="SnapshotSaved.html" class="extype" name="org.eligosource.eventsourced.core.SnapshotSaved">SnapshotSaved</a></span>, <span name="initiator">initiator: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Event received by journal when a snapshot has been successfully saved.</p>
+    </li><li name="org.eligosource.eventsourced.core.Journal.SaveSnapshotFailed" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="SaveSnapshotFailedextendsProductwithSerializable"></a>
+      <a id="SaveSnapshotFailed:SaveSnapshotFailed"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Journal$$SaveSnapshotFailed.html"><span class="name">SaveSnapshotFailed</span></a><span class="params">(<span name="cause">cause: <span class="extype" name="scala.Throwable">Throwable</span></span>, <span name="initiator">initiator: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      <p class="comment cmt">Event received by journal when a snapshot could not be successfully saved.</p>
     </li><li name="org.eligosource.eventsourced.core.Journal.WriteAck" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="WriteAckextendsProductwithSerializable"></a>
       <a id="WriteAck:WriteAck"></a>
@@ -232,7 +285,7 @@ command.</p>
         <a href="Journal$$Written.html"><span class="name">Written</span></a><span class="params">(<span name="msg">msg: <a href="Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">Message</a></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
-      <p class="comment cmt">Event message wrapper used by the
+      <p class="comment cmt">Message sent to targets after processing
 <a href="Journal$$WriteInMsg.html" class="extype" name="org.eligosource.eventsourced.core.Journal.WriteInMsg">org.eligosource.eventsourced.core.Journal.WriteInMsg</a>,
 <a href="Journal$$WriteOutMsg.html" class="extype" name="org.eligosource.eventsourced.core.Journal.WriteOutMsg">org.eligosource.eventsourced.core.Journal.WriteOutMsg</a>,
 <a href="Journal$$BatchReplayInMsgs.html" class="extype" name="org.eligosource.eventsourced.core.Journal.BatchReplayInMsgs">org.eligosource.eventsourced.core.Journal.BatchReplayInMsgs</a>,
@@ -336,6 +389,32 @@ command.</p>
       </span>
       </h4>
       <p class="comment cmt">Response from a journal to a sender when input message replay has been completed.</p>
+    </li><li name="org.eligosource.eventsourced.core.Journal.ReplayInMsgs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReplayInMsgs"></a>
+      <a id="ReplayInMsgs:ReplayInMsgs"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Journal$$ReplayInMsgs$.html"><span class="name">ReplayInMsgs</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.core.Journal.ReplayOutMsgs" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ReplayOutMsgs"></a>
+      <a id="ReplayOutMsgs:ReplayOutMsgs"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="Journal$$ReplayOutMsgs$.html"><span class="name">ReplayOutMsgs</span></a><span class="result"> extends <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
     </li><li name="org.eligosource.eventsourced.core.Journal#SkipAck" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
       <a id="SkipAck:Long"></a>
       <a id="SkipAck:Long"></a>
@@ -389,7 +468,7 @@ command.</p>
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<span class="extype" name="java.lang">java.lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -431,7 +510,7 @@ command.</p>
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<span class="extype" name="java.lang">java.lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>

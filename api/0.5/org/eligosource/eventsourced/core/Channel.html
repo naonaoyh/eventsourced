@@ -46,7 +46,17 @@
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A channel keeps track of successfully delivered event <a href="Message.html" class="extype" name="org.eligosource.eventsourced.core.Message">org.eligosource.eventsourced.core.Message</a>s.
 Channels are used by <a href="Eventsourced.html" class="extype" name="org.eligosource.eventsourced.core.Eventsourced">org.eligosource.eventsourced.core.Eventsourced</a> actors to prevent redundant
-message delivery to destinations during event message replay.</p><p>A less reliable alternative to channels is communication via sender references. Event messages that
+message delivery to destinations during event message replay.</p><p>For channels to work properly, <code>Eventsourced</code> processors must copy the <code>processorId</code> and <code>sequenceNr</code>
+values from a received (and journaled) input event message to output event messages. This is usually
+done by calling <code>copy()</code> on the received input event message and updating only those fields that are
+relevant for the application such as <code>event</code> or <code>ack</code>, for example:</p><pre><span class="kw">class</span> Processor(channel: ActorRef) <span class="kw">extends</span> Actor {
+<span class="kw">def</span> receive = {
+  <span class="kw">case</span> msg: Message <span class="kw">=&gt;</span> {
+    <span class="cmt">// ...</span>
+    channel ! msg.copy(event = ..., ack = ...)
+  }
+}
+}</pre><p>When using an <a href="Emitter.html" class="extype" name="org.eligosource.eventsourced.core.Emitter">org.eligosource.eventsourced.core.Emitter</a>, this is done automatically.</p><p>A less reliable alternative to channels is communication via sender references. Event messages that
 are sent to processors during a replay always have a <code>deadLetters</code> sender reference which prevents
 redundant delivery as well. The main difference is that the delivery guarantee changes from
 <i>at-least-once</i> to <i>at-most-once</i>.
@@ -131,7 +141,7 @@ redundant delivery as well. The main difference is that the delivery guarantee c
       </span>
       </h4>
       <p class="shortcomment cmt">Channel destination.</p>
-    </li><li name="org.eligosource.eventsourced.core.Channel#id" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+    </li><li name="org.eligosource.eventsourced.core.Channel#id" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="id:Int"></a>
       <a id="id:Int"></a>
       <h4 class="signature">
@@ -143,8 +153,7 @@ redundant delivery as well. The main difference is that the delivery guarantee c
         <span class="name">id</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">Channel id.</p><div class="fullcomment"><div class="comment cmt"><p>Channel id. Must be a positive integer.
-</p></div></div>
+      <p class="shortcomment cmt">Channel id.</p>
     </li><li name="akka.actor.Actor#receive" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="receive:Actor.this.Receive"></a>
       <a id="receive:Receive"></a>
@@ -253,7 +262,7 @@ redundant delivery as well. The main difference is that the delivery guarantee c
         <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<span class="extype" name="java.lang">java.lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
@@ -321,7 +330,7 @@ redundant delivery as well. The main difference is that the delivery guarantee c
         <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<span class="extype" name="java.lang">java.lang</span>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
