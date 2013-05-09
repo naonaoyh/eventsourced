@@ -29,9 +29,9 @@
         </head>
         <body class="type">
       <div id="definition">
-        <a href="AsynchronousWriteReplaySupport$.html" title="Go to companion"><img src="../../../../../lib/trait_to_object_big.png" /></a>
+        <img src="../../../../../lib/trait_big.png" />
         <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.journal">journal</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.journal.common">common</a></p>
-        <h1><a href="AsynchronousWriteReplaySupport$.html" title="Go to companion">AsynchronousWriteReplaySupport</a></h1>
+        <h1>AsynchronousWriteReplaySupport</h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -112,16 +112,29 @@
       </span>
       </h4>
       
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.ResequencerActor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="ResequencerActorextendsActor"></a>
-      <a id="ResequencerActor:ResequencerActor"></a>
+    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.Resequencer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ResequencerextendsActor"></a>
+      <a id="Resequencer:Resequencer"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <a href="AsynchronousWriteReplaySupport$ResequencerActor.html"><span class="name">ResequencerActor</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span></span>
+        <a href="AsynchronousWriteReplaySupport$Resequencer.html"><span class="name">Resequencer</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.Snapshotter" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="SnapshotterextendsAnyRef"></a>
+      <a id="Snapshotter:Snapshotter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="AsynchronousWriteReplaySupport$Snapshotter.html"><span class="name">Snapshotter</span></a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
@@ -138,51 +151,12 @@
       </span>
       </h4>
       
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.WriterActor" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="WriterActorextendsActor"></a>
-      <a id="WriterActor:WriterActor"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">class</span>
-      </span>
-      <span class="symbol">
-        <a href="AsynchronousWriteReplaySupport$WriterActor.html"><span class="name">WriterActor</span></a><span class="result"> extends <span class="extype" name="akka.actor.Actor">Actor</span></span>
-      </span>
-      </h4>
-      
     </li></ol>
             </div>
 
         <div id="values" class="values members">
               <h3>Abstract Value Members</h3>
-              <ol><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#asyncWriteTimeout" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="asyncWriteTimeout:scala.concurrent.duration.FiniteDuration"></a>
-      <a id="asyncWriteTimeout:FiniteDuration"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">asyncWriteTimeout</span><span class="result">: <span class="extype" name="scala.concurrent.duration.FiniteDuration">FiniteDuration</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#asyncWriterCount" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="asyncWriterCount:Int"></a>
-      <a id="asyncWriterCount:Int"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">asyncWriterCount</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#journalProps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+              <ol><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#journalProps" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="journalProps:org.eligosource.eventsourced.core.JournalProps"></a>
       <a id="journalProps:JournalProps"></a>
       <h4 class="signature">
@@ -195,7 +169,7 @@
       </span>
       </h4>
       
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#replayer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#replayer" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
       <a id="replayer:AsynchronousWriteReplaySupport.this.Replayer"></a>
       <a id="replayer:Replayer"></a>
       <h4 class="signature">
@@ -207,7 +181,20 @@
         <span class="name">replayer</span><span class="result">: <a href="AsynchronousWriteReplaySupport$Replayer.html" class="extype" name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.Replayer">Replayer</a></span>
       </span>
       </h4>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#snapshotter" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="snapshotter:AsynchronousWriteReplaySupport.this.Snapshotter"></a>
+      <a id="snapshotter:Snapshotter"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">snapshotter</span><span class="result">: <a href="AsynchronousWriteReplaySupport$Snapshotter.html" class="extype" name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.Snapshotter">Snapshotter</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#storedCounter" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
       <a id="storedCounter:Long"></a>
       <a id="storedCounter:Long"></a>
@@ -221,19 +208,19 @@
       </span>
       </h4>
       
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#writer" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
-      <a id="writer(id:Int):AsynchronousWriteReplaySupport.this.Writer"></a>
-      <a id="writer(Int):Writer"></a>
+    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#writer" visbl="prt" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="writer:AsynchronousWriteReplaySupport.this.Writer"></a>
+      <a id="writer:Writer"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier">abstract </span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">writer</span><span class="params">(<span name="id">id: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="AsynchronousWriteReplaySupport$Writer.html" class="extype" name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.Writer">Writer</a></span>
+        <span class="name">writer</span><span class="result">: <a href="AsynchronousWriteReplaySupport$Writer.html" class="extype" name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.Writer">Writer</a></span>
       </span>
       </h4>
-      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd></dl></div>
     </li></ol>
             </div>
 
@@ -304,32 +291,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#_counter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="_counter:Long"></a>
-      <a id="_counter:Long"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">var</span>
-      </span>
-      <span class="symbol">
-        <span class="name">_counter</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#_counterResequencer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="_counterResequencer:Long"></a>
-      <a id="_counterResequencer:Long"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">var</span>
-      </span>
-      <span class="symbol">
-        <span class="name">_counterResequencer</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -357,28 +318,15 @@
       </h4>
       
     </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#asyncWriteAndResequence" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="asyncWriteAndResequence(cmd:Any):Unit"></a>
-      <a id="asyncWriteAndResequence(Any):Unit"></a>
+      <a id="asyncWriteAndResequence[A](cmd:A,handler:A=&gt;scala.concurrent.Future[Any]):Unit"></a>
+      <a id="asyncWriteAndResequence[A](A,(A)⇒Future[Any]):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">asyncWriteAndResequence</span><span class="params">(<span name="cmd">cmd: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#asyncWriteTimeoutObj" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="asyncWriteTimeoutObj:akka.util.Timeout"></a>
-      <a id="asyncWriteTimeoutObj:Timeout"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">asyncWriteTimeoutObj</span><span class="result">: <span class="extype" name="akka.util.Timeout">Timeout</span></span>
+        <span class="name">asyncWriteAndResequence</span><span class="tparams">[<span name="A">A</span>]</span><span class="params">(<span name="cmd">cmd: <span class="extype" name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.asyncWriteAndResequence.A">A</span></span>, <span name="handler">handler: (<span class="extype" name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport.asyncWriteAndResequence.A">A</span>) ⇒ <span class="extype" name="scala.concurrent.Future">Future</span>[<span class="extype" name="scala.Any">Any</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
       </span>
       </h4>
       
@@ -411,32 +359,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../akka/package.html" class="extype" name="akka">akka</a>] </dd><dt>Definition Classes</dt><dd>Actor</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#counter" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="counter:Long"></a>
-      <a id="counter:Long"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">counter</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#counterResequencer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="counterResequencer:Long"></a>
-      <a id="counterResequencer:Long"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">counterResequencer</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -584,7 +506,7 @@
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport">AsynchronousWriteReplaySupport</a> → Actor</dd></dl></div>
     </li><li name="akka.actor.Actor#preRestart" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="preRestart(reason:Throwable,message:Option[Any]):Unit"></a>
+      <a id="preRestart(reason:&lt;?&gt;,message:&lt;?&gt;):Unit"></a>
       <a id="preRestart(Throwable,Option[Any]):Unit"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -622,19 +544,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport">AsynchronousWriteReplaySupport</a> → Actor</dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#resequencer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="resequencer:akka.actor.ActorRef"></a>
-      <a id="resequencer:ActorRef"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">var</span>
-      </span>
-      <span class="symbol">
-        <span class="name">resequencer</span><span class="result">: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>
-      </span>
-      </h4>
-      
     </li><li name="akka.actor.Actor#self" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="self:akka.actor.ActorRef"></a>
       <a id="self:ActorRef"></a>
@@ -787,19 +696,6 @@
                 <span class="name">@throws</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.common.AsynchronousWriteReplaySupport#writers" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="writers:Seq[akka.actor.ActorRef]"></a>
-      <a id="writers:Seq[ActorRef]"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">var</span>
-      </span>
-      <span class="symbol">
-        <span class="name">writers</span><span class="result">: <span class="extype" name="scala.Seq">Seq</span>[<span class="extype" name="akka.actor.ActorRef">ActorRef</span>]</span>
-      </span>
-      </h4>
-      
     </li></ol>
             </div>
 

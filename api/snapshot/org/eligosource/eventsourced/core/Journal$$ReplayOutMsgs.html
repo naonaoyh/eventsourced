@@ -29,9 +29,9 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../../lib/class_big.png" />
+        <a href="Journal$$ReplayOutMsgs$.html" title="Go to companion"><img src="../../../../lib/class_to_object_big.png" /></a>
         <p id="owner"><a href="../../../package.html" class="extype" name="org">org</a>.<a href="../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.core">core</a>.<a href="Journal$.html" class="extype" name="org.eligosource.eventsourced.core.Journal">Journal</a></p>
-        <h1>ReplayOutMsgs</h1>
+        <h1><a href="Journal$$ReplayOutMsgs$.html" title="Go to companion">ReplayOutMsgs</a></h1>
       </div>
 
       <h4 id="signature" class="signature">
@@ -40,12 +40,12 @@
         <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">ReplayOutMsgs</span><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>, <span name="fromSequenceNr">fromSequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="target">target: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">ReplayOutMsgs</span><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>, <span name="fromSequenceNr">fromSequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="toSequenceNr">toSequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="target">target: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Instructs a <code>Journal</code> to replay output messages for a single <code>ReliableChannel</code>.
-</p></div><dl class="paramcmts block"><dt class="param">channelId</dt><dd class="cmt"><p>id of the reliable channel.</p></dd><dt class="param">fromSequenceNr</dt><dd class="cmt"><p>sequence number from where the replay should start.</p></dd><dt class="param">target</dt><dd class="cmt"><p>receiver of the replayed messages. The journal sends the
+</p></div><dl class="paramcmts block"><dt class="param">channelId</dt><dd class="cmt"><p>id of the reliable channel.</p></dd><dt class="param">fromSequenceNr</dt><dd class="cmt"><p>sequence number from where the replay should start.</p></dd><dt class="param">toSequenceNr</dt><dd class="cmt"><p>sequence number where the replay should end (inclusive).</p></dd><dt class="param">target</dt><dd class="cmt"><p>receiver of the replayed messages. The journal sends the
        replayed messages to <code>target</code> wrapped in a
        <a href="Journal$$Written.html" class="extype" name="org.eligosource.eventsourced.core.Journal.Written">org.eligosource.eventsourced.core.Journal.Written</a> message. The
        sender reference is set to <code>system.deadLetters</code>.
@@ -90,7 +90,7 @@
         <div id="constructors" class="members">
               <h3>Instance Constructors</h3>
               <ol><li name="org.eligosource.eventsourced.core.Journal.ReplayOutMsgs#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="&lt;init&gt;(channelId:Int,fromSequenceNr:Long,target:akka.actor.ActorRef):org.eligosource.eventsourced.core.Journal.ReplayOutMsgs"></a>
+      <a id="&lt;init&gt;(channelId:Int,fromSequenceNr:Long,toSequenceNr:Long,target:akka.actor.ActorRef):org.eligosource.eventsourced.core.Journal.ReplayOutMsgs"></a>
       <a id="&lt;init&gt;:ReplayOutMsgs"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -98,10 +98,10 @@
         <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">ReplayOutMsgs</span><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>, <span name="fromSequenceNr">fromSequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="target">target: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span>
+        <span class="name">ReplayOutMsgs</span><span class="params">(<span name="channelId">channelId: <span class="extype" name="scala.Int">Int</span></span>, <span name="fromSequenceNr">fromSequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="toSequenceNr">toSequenceNr: <span class="extype" name="scala.Long">Long</span></span>, <span name="target">target: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>)</span>
       </span>
       </h4>
-      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">channelId</dt><dd class="cmt"><p>id of the reliable channel.</p></dd><dt class="param">fromSequenceNr</dt><dd class="cmt"><p>sequence number from where the replay should start.</p></dd><dt class="param">target</dt><dd class="cmt"><p>receiver of the replayed messages. The journal sends the
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">channelId</dt><dd class="cmt"><p>id of the reliable channel.</p></dd><dt class="param">fromSequenceNr</dt><dd class="cmt"><p>sequence number from where the replay should start.</p></dd><dt class="param">toSequenceNr</dt><dd class="cmt"><p>sequence number where the replay should end (inclusive).</p></dd><dt class="param">target</dt><dd class="cmt"><p>receiver of the replayed messages. The journal sends the
        replayed messages to <code>target</code> wrapped in a
        <a href="Journal$$Written.html" class="extype" name="org.eligosource.eventsourced.core.Journal.Written">org.eligosource.eventsourced.core.Journal.Written</a> message. The
        sender reference is set to <code>system.deadLetters</code>.
@@ -359,6 +359,19 @@
        <a href="Journal$$Written.html" class="extype" name="org.eligosource.eventsourced.core.Journal.Written">org.eligosource.eventsourced.core.Journal.Written</a> message. The
        sender reference is set to <code>system.deadLetters</code>.
 </p></div></div>
+    </li><li name="org.eligosource.eventsourced.core.Journal.ReplayOutMsgs#toSequenceNr" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="toSequenceNr:Long"></a>
+      <a id="toSequenceNr:Long"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toSequenceNr</span><span class="result">: <span class="extype" name="scala.Long">Long</span></span>
+      </span>
+      </h4>
+      <p class="shortcomment cmt">sequence number where the replay should end (inclusive).</p>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>

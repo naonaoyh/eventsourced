@@ -57,7 +57,7 @@ journal comes with different optimizations to choose from, as described at the m
 <span class="kw">val</span> journalDir: File = ...
 <span class="kw">val</span> journal: ActorRef = Journal(LeveldbJournalProps(journalDir))</pre></div><dl class="paramcmts block"><dt class="param">dir</dt><dd class="cmt"><p>Journal directory.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.</p></dd><dt class="param">fsync</dt><dd class="cmt"><p><code>true</code> if every write is physically synced. Default is <code>false</code>.</p></dd><dt class="param">checksum</dt><dd class="cmt"><p><code>true</code> if checksums are verified on read. Default is <code>false</code>.</p></dd><dt class="param">processorStructured</dt><dd class="cmt"><p><code>true</code> if entries are primarily ordered by processor
        id, <code>false</code> if entries are ordered by sequence number.  Default is <code>true</code>.</p></dd><dt class="param">snapshotDir</dt><dd class="cmt"><p>Directory where the journal will store snapshots. A relative
-       path is relative to <code>dir</code>.</p></dd><dt class="param">snapshotSerializer</dt><dd class="cmt"><p>serializer for writing and reading snapshots.</p></dd><dt class="param">snapshotSaveTimeout</dt><dd class="cmt"><p>Timeout for saving a snapshot.
+       path is relative to <code>dir</code>.</p></dd><dt class="param">snapshotSerializer</dt><dd class="cmt"><p>Serializer for writing and reading snapshots.</p></dd><dt class="param">snapshotSaveTimeout</dt><dd class="cmt"><p>Timeout for saving a snapshot.
 </p></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <a href="../../core/JournalProps.html" class="extype" name="org.eligosource.eventsourced.core.JournalProps">JournalProps</a>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
@@ -112,7 +112,7 @@ journal comes with different optimizations to choose from, as described at the m
       </h4>
       <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">dir</dt><dd class="cmt"><p>Journal directory.</p></dd><dt class="param">name</dt><dd class="cmt"><p>Optional journal actor name.</p></dd><dt class="param">dispatcherName</dt><dd class="cmt"><p>Optional journal actor dispatcher name.</p></dd><dt class="param">fsync</dt><dd class="cmt"><p><code>true</code> if every write is physically synced. Default is <code>false</code>.</p></dd><dt class="param">checksum</dt><dd class="cmt"><p><code>true</code> if checksums are verified on read. Default is <code>false</code>.</p></dd><dt class="param">processorStructured</dt><dd class="cmt"><p><code>true</code> if entries are primarily ordered by processor
        id, <code>false</code> if entries are ordered by sequence number.  Default is <code>true</code>.</p></dd><dt class="param">snapshotDir</dt><dd class="cmt"><p>Directory where the journal will store snapshots. A relative
-       path is relative to <code>dir</code>.</p></dd><dt class="param">snapshotSerializer</dt><dd class="cmt"><p>serializer for writing and reading snapshots.</p></dd><dt class="param">snapshotSaveTimeout</dt><dd class="cmt"><p>Timeout for saving a snapshot.
+       path is relative to <code>dir</code>.</p></dd><dt class="param">snapshotSerializer</dt><dd class="cmt"><p>Serializer for writing and reading snapshots.</p></dd><dt class="param">snapshotSaveTimeout</dt><dd class="cmt"><p>Timeout for saving a snapshot.
 </p></dd></dl></div>
     </li></ol>
             </div>
@@ -460,7 +460,7 @@ journal comes with different optimizations to choose from, as described at the m
         <span class="name">snapshotSerializer</span><span class="result">: <a href="../common/serialization/SnapshotSerializer.html" class="extype" name="org.eligosource.eventsourced.journal.common.serialization.SnapshotSerializer">SnapshotSerializer</a></span>
       </span>
       </h4>
-      <p class="shortcomment cmt">serializer for writing and reading snapshots.</p>
+      <p class="shortcomment cmt">Serializer for writing and reading snapshots.</p>
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
