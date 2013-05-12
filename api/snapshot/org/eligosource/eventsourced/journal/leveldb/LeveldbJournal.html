@@ -17,7 +17,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../../index.html';
-            var hash = 'org.eligosource.eventsourced.journal.leveldb.LeveldbJournal$';
+            var hash = 'org.eligosource.eventsourced.journal.leveldb.LeveldbJournal';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -27,25 +27,24 @@
    	  </script>
     
         </head>
-        <body class="value">
+        <body class="type">
       <div id="definition">
-        <a href="LeveldbJournal.html" title="Go to companion"><img src="../../../../../lib/object_to_trait_big.png" /></a>
+        <a href="LeveldbJournal$.html" title="Go to companion"><img src="../../../../../lib/trait_to_object_big.png" /></a>
         <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.eligosource">eligosource</a>.<a href="../../package.html" class="extype" name="org.eligosource.eventsourced">eventsourced</a>.<a href="../package.html" class="extype" name="org.eligosource.eventsourced.journal">journal</a>.<a href="package.html" class="extype" name="org.eligosource.eventsourced.journal.leveldb">leveldb</a></p>
-        <h1><a href="LeveldbJournal.html" title="Go to companion">LeveldbJournal</a></h1>
+        <h1><a href="LeveldbJournal$.html" title="Go to companion">LeveldbJournal</a></h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">object</span>
+        <span class="kind">trait</span>
       </span>
       <span class="symbol">
-        <span class="name">LeveldbJournal</span>
+        <span class="name">LeveldbJournal</span><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"></div><dl class="attributes block"> <dt>See also</dt><dd><span class="cmt"><p><a href="LeveldbJournalProps.html" class="extype" name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps">org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps</a>
-</p></span></dd></dl><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><dl class="attributes block"> <dt>Self Type</dt><dd><a href="" class="extype" name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournal">LeveldbJournal</a> with <span class="extype" name="akka.actor.Actor">Actor</span></dd></dl><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
           <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
@@ -87,10 +86,26 @@
 
         
 
-        
+        <div id="values" class="values members">
+              <h3>Abstract Value Members</h3>
+              <ol><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournal#props" visbl="pub" data-isabs="true" fullComment="no" group="Ungrouped">
+      <a id="props:org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps"></a>
+      <a id="props:LeveldbJournalProps"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">abstract </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">props</span><span class="result">: <a href="LeveldbJournalProps.html" class="extype" name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournalProps">LeveldbJournalProps</a></span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
 
         <div id="values" class="values members">
-              <h3>Value Members</h3>
+              <h3>Concrete Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:AnyRef):Boolean"></a>
       <a id="!=(AnyRef):Boolean"></a>
@@ -211,6 +226,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournal#factory" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="factory:org.iq80.leveldb.DBFactory"></a>
+      <a id="factory:DBFactory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">factory</span><span class="result">: <span class="extype" name="org.iq80.leveldb.DBFactory">DBFactory</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -266,6 +294,58 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournal#levelDbReadOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="levelDbReadOptions:org.iq80.leveldb.ReadOptions"></a>
+      <a id="levelDbReadOptions:ReadOptions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">levelDbReadOptions</span><span class="result">: <span class="extype" name="org.iq80.leveldb.ReadOptions">ReadOptions</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournal#levelDbWriteOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="levelDbWriteOptions:org.iq80.leveldb.WriteOptions"></a>
+      <a id="levelDbWriteOptions:WriteOptions"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">levelDbWriteOptions</span><span class="result">: <span class="extype" name="org.iq80.leveldb.WriteOptions">WriteOptions</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournal#leveldb" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="leveldb:org.iq80.leveldb.DB"></a>
+      <a id="leveldb:DB"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">leveldb</span><span class="result">: <span class="extype" name="org.iq80.leveldb.DB">DB</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournal#leveldbOptions" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="leveldbOptions:org.iq80.leveldb.Options"></a>
+      <a id="leveldbOptions:Options"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">leveldbOptions</span><span class="result">: <span class="extype" name="org.iq80.leveldb.Options">Options</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -305,6 +385,19 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournal#serialization" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="serialization:org.eligosource.eventsourced.journal.common.serialization.CommandSerialization"></a>
+      <a id="serialization:CommandSerialization"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">serialization</span><span class="result">: <a href="../common/serialization/CommandSerialization.html" class="extype" name="org.eligosource.eventsourced.journal.common.serialization.CommandSerialization">CommandSerialization</a></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -384,58 +477,7 @@
 
         
 
-        <div id="values" class="values members">
-              <h3>Deprecated Value Members</h3>
-              <ol><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournal#apply" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="apply(dir:java.io.File,name:Option[String],dispatcherName:Option[String])(implicitsystem:akka.actor.ActorSystem):akka.actor.ActorRef"></a>
-      <a id="apply(File,Option[String],Option[String])(ActorSystem):ActorRef"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 0.5) use Journal(LeveldbJournalProps(dir)) instead">apply</span><span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="system">system: <span class="extype" name="akka.actor.ActorSystem">ActorSystem</span></span>)</span><span class="result">: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.5)</i> use Journal(LeveldbJournalProps(dir)) instead</p></dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournal#processorStructured" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="processorStructured(dir:java.io.File,name:Option[String],dispatcherName:Option[String])(implicitsystem:akka.actor.ActorSystem):akka.actor.ActorRef"></a>
-      <a id="processorStructured(File,Option[String],Option[String])(ActorSystem):ActorRef"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 0.5) use Journal(LeveldbJournalProps(dir)) instead">processorStructured</span><span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="system">system: <span class="extype" name="akka.actor.ActorSystem">ActorSystem</span></span>)</span><span class="result">: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.5)</i> use Journal(LeveldbJournalProps(dir)) instead</p></dd></dl></div>
-    </li><li name="org.eligosource.eventsourced.journal.leveldb.LeveldbJournal#sequenceStructured" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="sequenceStructured(dir:java.io.File,name:Option[String],dispatcherName:Option[String])(implicitsystem:akka.actor.ActorSystem):akka.actor.ActorRef"></a>
-      <a id="sequenceStructured(File,Option[String],Option[String])(ActorSystem):ActorRef"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 0.5) use Journal(LeveldbJournalProps(dir).withSequenceStructure) instead">sequenceStructured</span><span class="params">(<span name="dir">dir: <span class="extype" name="java.io.File">File</span></span>, <span name="name">name: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>, <span name="dispatcherName">dispatcherName: <span class="extype" name="scala.Option">Option</span>[<span class="extype" name="scala.Predef.String">String</span>] = <span class="symbol">None</span></span>)</span><span class="params">(<span class="implicit">implicit </span><span name="system">system: <span class="extype" name="akka.actor.ActorSystem">ActorSystem</span></span>)</span><span class="result">: <span class="extype" name="akka.actor.ActorRef">ActorRef</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 0.5)</i> use Journal(LeveldbJournalProps(dir).withSequenceStructure) instead</p></dd></dl></div>
-    </li></ol>
-            </div>
+        
         </div>
 
         <div id="inheritedMembers">
