@@ -10,7 +10,7 @@ Eventsourced
   </tr>
   <tr>
     <td>Akka version: </td>
-    <td>2.2-M3</td>
+    <td>2.2.0-RC1</td>
   </tr>
 </table>
 

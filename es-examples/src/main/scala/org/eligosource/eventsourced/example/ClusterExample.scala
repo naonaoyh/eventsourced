@@ -90,7 +90,7 @@ class NodeActor(selfAddress: Address) extends Actor {
   }
 
   /** Obtain remote destination reference */
-  def destination = context.actorFor("akka://journal@127.0.0.1:2553/user/destination")
+  def destination = context.actorFor("akka.tcp://journal@127.0.0.1:2553/user/destination")
 }
 
 /**
@@ -101,13 +101,13 @@ class NodeActor(selfAddress: Address) extends Actor {
  */
 object Node {
   def main(args: Array[String]) {
-    if (args.nonEmpty) System.setProperty("akka.remote.netty.port", args(0))
+    if (args.nonEmpty) System.setProperty("akka.remote.netty.tcp.port", args(0))
 
     // create an actor system with a configuration loaded from "cluster.conf"
     val system = ActorSystem("node", ConfigFactory.load("cluster"))
 
     // obtain remote journal reference
-    val journal = system.actorFor("akka://journal@127.0.0.1:2553/user/journal")
+    val journal = system.actorFor("akka.tcp://journal@127.0.0.1:2553/user/journal")
 
     // initialize cluster extension
     val cluster = Cluster(system)
