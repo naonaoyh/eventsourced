@@ -139,7 +139,12 @@ object EventsourcedBuild extends Build {
     id = "eventsourced-core-test",
     base = file("es-core-test"),
     settings = defaultSettings
-  ) dependsOn(esCore, esJournalLeveldb % "test->test;compile->compile")
+  ) dependsOn(esCore,
+    esJournalLeveldb % "test->test;compile->compile",
+    esJournalHbase % "test->it;compile->compile",
+    esJournalMongodbCasbah % "test->test;compile->compile",
+    esJournalMongodbReactive % "test->it;compile->compile"
+  )
 
   lazy val esExamples = Project(
     id = "eventsourced-examples",
